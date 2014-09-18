@@ -12,8 +12,14 @@
         <div class="col-lg-12">
             <h1 class="page-header">Movies:</h1>
             <ul ng-repeat="movie in movieList">
-                <li>{{movie.name}} Rating: {{movie.rating}}</a></li>
+                <li>{{movie.name}}, Rating: {{movie.rating}}</a></li>
             </ul>
+            <form ng-submit="addMovie()">
+                <input type="text" ng-model="newMovie" size="30"
+                       placeholder="add movie name here">
+                <input type="number" max="10" ng-model="newRating">
+                <input class="btn-primary" type="submit" value="add">
+            </form>
         </div>
     </div>
 </div>

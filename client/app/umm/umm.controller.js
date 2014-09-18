@@ -2,8 +2,6 @@
 
 angular.module('yeoMeanApp')
   .controller('UmmCtrl', function ($scope, $http) {
-    $scope.message = 'Hello';
-
     $scope.movieList = [];
 
     $http.get('/api/movies').success(function(movieList) {
@@ -14,7 +12,7 @@ angular.module('yeoMeanApp')
         if($scope.newMovie === '') {
             return;
         }
-        $http.post('/api/movies', { name: $scope.newMovie });
+        $http.post('/api/movies', { name: $scope.newMovie, rating: $scope.newRating });
         $scope.newMovie = '';
     };
 
