@@ -29,3 +29,12 @@ Thing.find({}).remove(function() {
     info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
   });
 });
+
+var Movie = require('../api/movie/movie.model');
+
+Movie.find({}).remove(function() {
+    Movie.create({
+        name : 'Tron',
+        info : 'test'
+    });
+});
