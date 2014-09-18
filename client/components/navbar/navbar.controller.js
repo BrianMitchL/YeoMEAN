@@ -5,7 +5,9 @@ angular.module('yeoMeanApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    },
+    {'title': 'UMM',
+    'link': '/umm'}];
 
     $scope.isCollapsed = true;
 
