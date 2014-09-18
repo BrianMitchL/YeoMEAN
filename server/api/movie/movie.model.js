@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 var MovieSchema = new Schema({
   name: String,
-  info: String,
+  rating: Number,
   active: Boolean
 });
 
