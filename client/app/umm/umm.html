@@ -15,10 +15,12 @@
                 <li>{{movie.name}}, Rating: {{movie.rating}} <button class="btn btn-xs btn-danger" ng-click="deleteMovie(movie)">Delete</button></li>
             </ul>
             <hr>
-            <form class="form-inline" ng-submit="addMovie()">
-                <input class="form-control" type="text" ng-model="newMovie" size="30" placeholder="name">
-                <input class="form-control" type="number" max="10" min="1" ng-model="newRating" placeholder="rating (1-10)">
-                <input class="btn btn-primary form-control" type="submit" value="add">
+            <form role="form" ng-submit="addMovie()">
+                <label for="movieName">New Movie Name</label>
+                <input class="form-control" id="movieName" type="text" ng-model="newMovie" size="30"placeholder="New Movie Name">
+                <label for="movieRating">New Movie Rating</label>
+                <input class="form-control" id="movieRating" type="number" max="10" min="1" ng-model="newRating" placeholder="New Movie Rating (1-10)">
+                <input class="btn btn-primary" type="submit" value="Add">
             </form>
         </div>
     </div>
