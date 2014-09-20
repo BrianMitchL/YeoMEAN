@@ -14,6 +14,7 @@ angular.module('yeoMeanApp')
         }
         $http.post('/api/movies', { name: $scope.newMovie, rating: $scope.newRating });
         $scope.newMovie = '';
+        $scope.newRating = '';
     };
 
     $scope.deleteMovie = function(movie) {
