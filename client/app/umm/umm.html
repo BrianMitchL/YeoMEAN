@@ -3,7 +3,7 @@
 <header class="hero-unit" id="banner">
     <div class="container">
         <h1>Movies!</h1>
-        <p class="lead">A sweet movie rating site!</p>
+        <p class="lead">A movie rating site based on the MEAN stack. <br /><small>Designed by Brian Mitchell</small></p>
     </div>
 </header>
 
@@ -15,6 +15,7 @@
                 <li>{{movie.name}}, Rating: {{movie.rating}} <button class="btn btn-xs btn-danger" ng-click="deleteMovie(movie)">Delete</button></li>
             </ul>
             <hr>
+            <h3>Add A Movie:</h3>
             <form role="form" ng-submit="addMovie()">
                 <label for="movieName">New Movie Name</label>
                 <input class="form-control" id="movieName" type="text" ng-model="newMovie" size="30"placeholder="New Movie Name">
