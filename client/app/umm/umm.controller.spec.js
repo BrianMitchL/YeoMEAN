@@ -15,6 +15,7 @@ describe('Controller: UmmCtrl', function () {
       $scope: scope
     });
     movieList = [];
+      //The following httpBackend things will determine what will happen when an http request is called during our tests
     httpBackend.when('POST', '/api/movies').respond(function(method, url, data, headers) {
         movieList.push(JSON.parse(data));
         return [200, {}, {}];
@@ -36,6 +37,7 @@ describe('Controller: UmmCtrl', function () {
           scope.newMovie = "Batman";
           scope.newRating = 9;
           scope.addMovie();
+          //all of the http requests are added into a queue and are all run when the flush() method is called
           httpBackend.flush();
           expect(movieList[0]).toEqual({name:"Batman", rating:9});
       });
@@ -47,6 +49,7 @@ describe('Controller: UmmCtrl', function () {
           //The _id is used so the correct movie is deleted from the "database"
           scope.deleteMovie({name:"Batman", rating:9, _id:1});
           httpBackend.flush();
+          expect(movieList.length).toEqual(0);
           expect(movieList[0]).toEqual(undefined);
       });
   });

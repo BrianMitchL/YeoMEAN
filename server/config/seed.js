@@ -36,5 +36,14 @@ Movie.find({}).remove(function() {
     Movie.create({
         name : 'Tron',
         rating : 10
+    }, {
+        name : 'Batman',
+        rating : 7
+    }, {
+        name : 'The Lego Movie',
+        rating : 10
+    }, {
+        name : 'Elmo in Grouchland',
+        rating : 2
     });
 });
