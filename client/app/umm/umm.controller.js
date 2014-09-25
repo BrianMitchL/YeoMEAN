@@ -32,8 +32,8 @@ angular.module('yeoMeanApp')
         });
     };
 
-    $scope.updateMovie = function(movie, $parent) {
-        $parent.isEditing = false;
+    $scope.updateMovie = function(movie) {
+        $scope.isEditing = false;
         $http.put('/api/movies/' + movie._id, movie).success(function(){
             //Update movieList to have the same data that's in the database on the sever
             $http.get('/api/movies').success(function(movieList) {
