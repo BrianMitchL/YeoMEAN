@@ -3,7 +3,7 @@
 <header class="hero-unit" id="banner">
     <div class="container">
         <h1>Movies!</h1>
-        <p class="lead">A movie rating site based on the MEAN stack. <br /><small>Designed by Brian Mitchell</small></p>
+        <p class="lead">A movie rating site based on the MEAN stack. <br /><small>Designed by Brian Mitchell (<a id="twitterName" href="https://twitter.com/bman4789" title="@bman4789">@bman4789</a>)</small></p>
     </div>
 </header>
 
@@ -20,11 +20,11 @@
                                 <input class="form-control" type="text" size="30" ng-model="movie.name" placeholder="Movie Name">
                                 <label>Movie Rating: </label>
                                 <input class="form-control" type="number" max="10" min="1" ng-model="movie.rating" placeholder="Movie Rating (1-10)">
-                            </form><button class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
+                                <button class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
+                            </form>
                         </div>
                         <div ng-switch-default>
-                            <p>{{movie.name}}, Rating: {{movie.rating}}</p>
-                            <p><button class="btn btn-xs btn-primary" ng-click="$parent.isEditing = true;">Edit</button> <button class="btn btn-xs btn-danger" ng-click="deleteMovie(movie)">Delete</button></p>
+                            <p>{{movie.name}}, Rating: {{movie.rating}} <button class="btn btn-xs btn-primary" ng-click="$parent.isEditing = true;">Edit</button> <button class="btn btn-xs btn-danger" ng-click="deleteMovie(movie)">Delete</button></p>
                         </div>
                     </div>
                 </li>
