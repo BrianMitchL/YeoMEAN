@@ -41,4 +41,8 @@ angular.module('yeoMeanApp')
             });
         });
     };
+
+    $scope.editMovie = function(movie) {
+        movie.isEditing = true;
+    }
   });
