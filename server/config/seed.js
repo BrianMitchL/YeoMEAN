@@ -34,7 +34,7 @@ var Movie = require('../api/movie/movie.model');
 
 Movie.find({}).remove(function() {
     Movie.create({
-        name : 'Tron',
+        name : 'Tron: Legacy',
         rating : 10
     }, {
         name : 'Batman',
