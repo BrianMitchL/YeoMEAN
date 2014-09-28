@@ -5,3 +5,7 @@
 #twitterName {
     color: white;
 }
+
+td {
+    vertical-align: middle;
+}
