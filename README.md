@@ -1,4 +1,4 @@
-YeoMEAN
+YeoMEAN [![Build Status](https://travis-ci.org/bman4789/YeoMEAN.svg?branch=master)](https://travis-ci.org/bman4789/YeoMEAN)
 =======
 
 A Yeoman based, generator-angular-fullstack project.
