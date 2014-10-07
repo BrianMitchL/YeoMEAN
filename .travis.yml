@@ -1,8 +1,15 @@
 language: node_js
 node_js:
-  - '0.10'
-  - '0.11'
+- '0.10'
+- '0.11'
 before_script:
-  - npm install -g bower grunt-cli
-  - bower install
+- npm install -g bower grunt-cli
+- bower install
 services: mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: wDepo1C58QSCBFCGs3ZD5b8vIxy+Qy26DjGgpFvsh5QghhcggTqexOwqT93iTk0aoAgBCRa0XrWpb/FCTEyb8ddFjEhCbFe/wkw/4qkAZ5nNEJ3yS2VJEbJ4btr1ZegcEn6zu7cxVlyNn32WUJ3GpPr6/ezq4GzMv3mBVZYusMY=
+  app: YeoMEAN
+  on:
+    repo: bman4789/YeoMEAN
