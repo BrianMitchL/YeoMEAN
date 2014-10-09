@@ -9,7 +9,7 @@ services: mongodb
 deploy:
   provider: heroku
   api_key:
-    secure: CX8jKYv7nKxF+FuiLH5tW928JX8TvCY4KQ8yNi5APWcOfv0ys8u9pX2veVeWfDD9nlRUilfMKK8E0yXFozckot1RYga8S6cYE5wmVbwAj7bmwOhJ1gzfnS7zkKH7ObXgn0GepT9Xc9ADJ8xjxYfcihf3GLtPxRHAz6ali3cTtJA=
-  app: sleepy-shore-2584
+    secure: Pu3nqcQUsvU0bDIMdw3/PZ0n+xaibodt+F1uunovHsozyt2SiprH0m6tLOB3bnaEagWMaPo/Du+GPwhsXgYwkfv+X40T36UA8DYQCBbxOqNzngA7qlQFoGHT8BNuEC3RyKtEJ1E6rdwAAmhsYQhwpcxyPpHYNs4Aa1RNCkDrGis=
+  app: YeoMEAN
   on:
     repo: bman4789/YeoMEAN
