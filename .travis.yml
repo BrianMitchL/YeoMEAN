@@ -6,10 +6,3 @@ before_script:
 - npm install -g bower grunt-cli
 - bower install
 services: mongodb
-deploy:
-  provider: heroku
-  api_key:
-    secure: lH//sYxIx9A3+eCZHFARyf4P/AP4M4mi5MK9yzgqPGHvePg0KKM63igj60lLAfr3YPYQp99fQsbkoMryfc6N7X6HDXDM9vEOYvmj2+mCinP4tBcudfNcvwV7sETCjC98BvQHsadZRDdLAtDeGotbYK6o99iNUO507YC841SLnL0=
-  app: yeomean
-  on:
-    repo: bman4789/YeoMEAN
