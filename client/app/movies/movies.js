@@ -3,8 +3,8 @@
 angular.module('yeoMeanApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/umm', {
-        templateUrl: 'app/umm/umm.html',
-        controller: 'UmmCtrl'
+      .when('/movies', {
+        templateUrl: 'app/movies/movies.html',
+        controller: 'MoviesCtrl'
       });
   });

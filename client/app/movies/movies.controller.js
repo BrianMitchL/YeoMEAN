@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('yeoMeanApp')
-  .controller('UmmCtrl', function ($scope, $http) {
+  .controller('MoviesCtrl', function ($scope, $http) {
     $scope.movieList = [];
 
     //Update movieList to have the same data that's in the database on the sever

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: UmmCtrl', function () {
+describe('Controller: MoviesCtrl', function () {
 
   // load the controller's module
   beforeEach(module('yeoMeanApp'));
@@ -11,7 +11,7 @@ describe('Controller: UmmCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope, $httpBackend) {
     scope = $rootScope.$new();
     httpBackend = $httpBackend;
-    UmmCtrl = $controller('UmmCtrl', {
+    UmmCtrl = $controller('MoviesCtrl', {
       $scope: scope
     });
     movieList = [];

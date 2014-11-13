@@ -6,8 +6,8 @@ angular.module('yeoMeanApp')
       'title': 'Home',
       'link': '/'
     },
-    {'title': 'UMM',
-    'link': '/umm'}];
+    {'title': 'Movies',
+    'link': '/movies'}];
 
     $scope.isCollapsed = true;
 
