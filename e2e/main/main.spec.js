@@ -9,8 +9,9 @@ describe('Main View', function() {
   });
 
   it('should include jumbotron with correct data', function() {
-    expect(page.h1El.getText()).toBe('\'Allo, \'Allo!');
+    expect(page.h1El.getText()).toBe('Brian\'s Angular Site');
     expect(page.imgEl.getAttribute('src')).toMatch(/assets\/images\/yeoman.png$/);
     expect(page.imgEl.getAttribute('alt')).toBe('I\'m Yeoman');
+    expect(page.smallEl.getText()).toBe('Build with Yeoman');
   });
 });
