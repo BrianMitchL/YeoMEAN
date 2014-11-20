@@ -33,6 +33,25 @@
                     <input class="btn btn-default" type="submit" value="Add Noun">
                 </div>
             </form>
+            <h3>Delete Words</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="word in words">
+                    <td>
+                        {{word.name}}
+                    </td>
+                    <td>
+                        <button class="btn btn-xs btn-danger" ng-click="deleteWord(word)">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
