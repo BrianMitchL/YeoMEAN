@@ -41,6 +41,7 @@
                     <thead>
                     <tr>
                         <th>Word</th>
+                        <th>Type</th>
                         <th>Delete</th>
                     </tr>
                     </thead>
@@ -48,6 +49,9 @@
                     <tr ng-repeat="word in words">
                         <td>
                             {{word.name}}
+                        </td>
+                        <td>
+                            {{word.type}}
                         </td>
                         <td>
                             <button class="btn btn-xs btn-danger" ng-click="deleteWord(word)">Delete</button>
