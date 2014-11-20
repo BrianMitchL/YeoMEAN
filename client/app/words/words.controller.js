@@ -3,21 +3,36 @@
 angular.module('yeoMeanApp')
   .controller('WordsCtrl', function ($scope, $http) {
         $scope.words = [];
+        $scope.adjectives = [];
+        $scope.verbs = [];
+        $scope.nouns = [];
 
         //Update words to have the same data that's in the database on the sever
         $http.get('/api/words').success(function(words) {
-            $scope.verbs = words;
+            $scope.words = words;
         });
 
         $scope.makeSentence = function() {
-            $scope.verb = "chuck";
-            $scope.adj = "whiney";
-            $scope.noun = "duck";
+            angular.forEach($scope.words, function(word) {
+                if (word.type == "verb") {
+                    $scope.verbs.push(word);
+                } else if (word.type == "adjective") {
+                    $scope.adjectives.push(word);
+                } else if (word.type == "noun") {
+                    $scope.nouns.push(word);
+                }
+            });
+            $scope.verbIndex = getRandomInt(0, $scope.verbs.length);
+            $scope.adjectiveIndex = getRandomInt(0, $scope.adjectives.length);
+            $scope.nounIndex = getRandomInt(0, $scope.nouns.length);
+            $scope.verb = $scope.verbs[$scope.verbIndex].name;
+            $scope.adj = $scope.adjectives[$scope.adjectiveIndex].name;
+            $scope.noun = $scope.nouns[$scope.nounIndex].name;
         };
 
-        $scope.getRandomInt = function(min, max) {
+        function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
-        };
+        }
 
         $scope.addVerb = function() {
             if($scope.newVerb === '') {
