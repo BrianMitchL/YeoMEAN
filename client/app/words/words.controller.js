@@ -19,9 +19,9 @@ angular.module('yeoMeanApp')
         });
 
         $scope.makeSentence = function() {
-            $scope.verb = $scope.verbs[getRandomInt(0, $scope.verbs.length)].name;
-            $scope.adjective = $scope.adjectives[getRandomInt(0, $scope.adjectives.length)].name;
-            $scope.noun = $scope.nouns[getRandomInt(0, $scope.nouns.length)].name;
+            $scope.verb = $scope.verbs[getRandomInt(0, $scope.verbs.length - 1)].name;
+            $scope.adjective = $scope.adjectives[getRandomInt(0, $scope.adjectives.length - 1)].name;
+            $scope.noun = $scope.nouns[getRandomInt(0, $scope.nouns.length - 1)].name;
         };
 
         function getRandomInt(min, max) {
