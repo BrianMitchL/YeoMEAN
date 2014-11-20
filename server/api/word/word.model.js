@@ -5,8 +5,7 @@ var mongoose = require('mongoose'),
 
 var WordSchema = new Schema({
   name: String,
-  info: String,
-  active: Boolean
+  type: String
 });
 
 module.exports = mongoose.model('Word', WordSchema);
