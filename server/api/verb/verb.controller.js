@@ -1,53 +1,53 @@
 'use strict';
 
 var _ = require('lodash');
-var Word = require('./word.model');
+var Verb = require('./verb.model');
 
-// Get list of words
+// Get list of verbs
 exports.index = function(req, res) {
-  Word.find(function (err, words) {
+  Verb.find(function (err, verbs) {
     if(err) { return handleError(res, err); }
-    return res.json(200, words);
+    return res.json(200, verbs);
   });
 };
 
-// Get a single word
+// Get a single verb
 exports.show = function(req, res) {
-  Word.findById(req.params.id, function (err, word) {
+  Verb.findById(req.params.id, function (err, verb) {
     if(err) { return handleError(res, err); }
-    if(!word) { return res.send(404); }
-    return res.json(word);
+    if(!verb) { return res.send(404); }
+    return res.json(verb);
   });
 };
 
-// Creates a new word in the DB.
+// Creates a new verb in the DB.
 exports.create = function(req, res) {
-  Word.create(req.body, function(err, word) {
+  Verb.create(req.body, function(err, verb) {
     if(err) { return handleError(res, err); }
-    return res.json(201, word);
+    return res.json(201, verb);
   });
 };
 
-// Updates an existing word in the DB.
+// Updates an existing verb in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
-  Word.findById(req.params.id, function (err, word) {
+  Verb.findById(req.params.id, function (err, verb) {
     if (err) { return handleError(res, err); }
-    if(!word) { return res.send(404); }
-    var updated = _.merge(word, req.body);
+    if(!verb) { return res.send(404); }
+    var updated = _.merge(verb, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, word);
+      return res.json(200, verb);
     });
   });
 };
 
-// Deletes a word from the DB.
+// Deletes a verb from the DB.
 exports.destroy = function(req, res) {
-  Word.findById(req.params.id, function (err, word) {
+  Verb.findById(req.params.id, function (err, verb) {
     if(err) { return handleError(res, err); }
-    if(!word) { return res.send(404); }
-    word.remove(function(err) {
+    if(!verb) { return res.send(404); }
+    verb.remove(function(err) {
       if(err) { return handleError(res, err); }
       return res.send(204);
     });

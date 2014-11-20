@@ -2,34 +2,26 @@
 
 angular.module('yeoMeanApp')
   .controller('WordsCtrl', function ($scope, $http) {
-        $scope.words = [];
-        $scope.adjectives = [];
         $scope.verbs = [];
+        $scope.adjectives = [];
         $scope.nouns = [];
         $scope.isCollapsed = true;
 
         //Update words to have the same data that's in the database on the sever
-        $http.get('/api/words').success(function(words) {
-            $scope.words = words;
-            $scope.makeSentence();
+        $http.get('/api/verbs').success(function(verbs) {
+            $scope.verbs = verbs;
+        });
+        $http.get('/api/adjectives').success(function(adjectives) {
+            $scope.adjectives = adjectives;
+        });
+        $http.get('/api/nouns').success(function(nouns) {
+            $scope.nouns = nouns;
         });
 
         $scope.makeSentence = function() {
-            angular.forEach($scope.words, function(word) {
-                if (word.type == "verb") {
-                    $scope.verbs.push(word);
-                } else if (word.type == "adjective") {
-                    $scope.adjectives.push(word);
-                } else if (word.type == "noun") {
-                    $scope.nouns.push(word);
-                }
-            });
-            $scope.verbIndex = getRandomInt(0, $scope.verbs.length);
-            $scope.adjectiveIndex = getRandomInt(0, $scope.adjectives.length);
-            $scope.nounIndex = getRandomInt(0, $scope.nouns.length);
-            $scope.verb = $scope.verbs[$scope.verbIndex].name;
-            $scope.adj = $scope.adjectives[$scope.adjectiveIndex].name;
-            $scope.noun = $scope.nouns[$scope.nounIndex].name;
+            $scope.verb = $scope.verbs[getRandomInt(0, $scope.verbs.length)].name;
+            $scope.adjective = $scope.adjectives[getRandomInt(0, $scope.adjectives.length)].name;
+            $scope.noun = $scope.nouns[getRandomInt(0, $scope.nouns.length)].name;
         };
 
         function getRandomInt(min, max) {
@@ -40,9 +32,9 @@ angular.module('yeoMeanApp')
             if($scope.newVerb === '') {
                 return;
             }
-            $http.post('/api/words', { name: $scope.newVerb, type: "verb" }).success(function(){
-                $http.get('/api/words').success(function(words) {
-                    $scope.words = words;
+            $http.post('/api/verbs', { name: $scope.newVerb }).success(function(){
+                $http.get('/api/verbs').success(function(verbs) {
+                    $scope.verbs = verbs;
                 });
                 $scope.newVerb = '';
             });
@@ -52,9 +44,9 @@ angular.module('yeoMeanApp')
             if($scope.newAdjective === '') {
                 return;
             }
-            $http.post('/api/words', { name: $scope.newAdjective, type: "adjective" }).success(function(){
-                $http.get('/api/words').success(function(words) {
-                    $scope.words = words;
+            $http.post('/api/adjectives', { name: $scope.newAdjective }).success(function(){
+                $http.get('/api/adjectives').success(function(adjectives) {
+                    $scope.adjectives = adjectives;
                 });
                 $scope.newAdjective = '';
             });
@@ -64,18 +56,34 @@ angular.module('yeoMeanApp')
             if($scope.newNoun === '') {
                 return;
             }
-            $http.post('/api/words', { name: $scope.newNoun, type: "noun" }).success(function(){
-                $http.get('/api/words').success(function(words) {
-                    $scope.words = words;
+            $http.post('/api/nouns', { name: $scope.newNoun }).success(function(){
+                $http.get('/api/nouns').success(function(nouns) {
+                    $scope.nouns = nouns;
                 });
                 $scope.newNoun = '';
             });
         };
 
-        $scope.deleteWord = function(word) {
-            $http.delete('/api/words/' + word._id).success(function(){
-                $http.get('/api/words').success(function(words) {
-                    $scope.words = words;
+        $scope.deleteVerb = function(verb) {
+            $http.delete('/api/verbs/' + verb._id).success(function(){
+                $http.get('/api/verbs').success(function(verbs) {
+                    $scope.verbs = verbs;
+                });
+            });
+        };
+
+        $scope.deleteAdjective = function(adjective) {
+            $http.delete('/api/adjectives/' + adjective._id).success(function(){
+                $http.get('/api/adjectives').success(function(adjectives) {
+                    $scope.adjectives = adjectives;
+                });
+            });
+        };
+
+        $scope.deleteNoun = function(noun) {
+            $http.delete('/api/nouns/' + noun._id).success(function(){
+                $http.get('/api/nouns').success(function(nouns) {
+                    $scope.nouns = nouns;
                 });
             });
         };

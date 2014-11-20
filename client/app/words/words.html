@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <h3>You {{ verb }} like a {{ adj }} {{ noun }}.</h3>
+            <h3>You {{ verb }} like a {{ adjective }} {{ noun }}.</h3>
             <button class="btn btn-primary" type="button" ng-click="makeSentence()">Generate Sentence</button>
             <h3>Add new Words:</h3>
             <form class="form-inline" role="form" ng-submit="addVerb()">
@@ -46,16 +46,38 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="word in words">
+                    <tr ng-repeat="verb in verbs">
                         <td>
-                            {{word.name}}
+                            {{verb.name}}
                         </td>
                         <td>
-                            {{word.type}}
+                            verb
                         </td>
                         <td>
-                            <button class="btn btn-xs btn-danger" ng-click="deleteWord(word)">Delete</button>
+                            <button class="btn btn-xs btn-danger" ng-click="deleteVerb(verb)">Delete</button>
+                    </td>
+                    </tr>
+                    <tr ng-repeat="adjective in adjectives">
+                        <td>
+                            {{adjective.name}}
                         </td>
+                        <td>
+                            adjective
+                        </td>
+                        <td>
+                            <button class="btn btn-xs btn-danger" ng-click="deleteAdjective(adjective)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr ng-repeat="noun in nouns">
+                        <td>
+                            {{noun.name}}
+                        </td>
+                        <td>
+                            noun
+                        </td>
+                        <td>
+                            <button class="btn btn-xs btn-danger" ng-click="deleteNoun(noun)">Delete</button>
+                    </td>
                     </tr>
                     </tbody>
                 </table>
