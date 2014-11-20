@@ -10,6 +10,7 @@ angular.module('yeoMeanApp')
         //Update words to have the same data that's in the database on the sever
         $http.get('/api/words').success(function(words) {
             $scope.words = words;
+            $scope.makeSentence();
         });
 
         $scope.makeSentence = function() {
