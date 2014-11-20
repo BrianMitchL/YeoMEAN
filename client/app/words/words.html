@@ -34,24 +34,28 @@
                 </div>
             </form>
             <h3>Delete Words</h3>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Word</th>
-                    <th>Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="word in words">
-                    <td>
-                        {{word.name}}
-                    </td>
-                    <td>
-                        <button class="btn btn-xs btn-danger" ng-click="deleteWord(word)">Delete</button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle List of Words</button>
+            <hr>
+            <div collapse="isCollapsed">
+                <table class="table well">
+                    <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="word in words">
+                        <td>
+                            {{word.name}}
+                        </td>
+                        <td>
+                            <button class="btn btn-xs btn-danger" ng-click="deleteWord(word)">Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

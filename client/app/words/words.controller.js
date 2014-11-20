@@ -6,6 +6,7 @@ angular.module('yeoMeanApp')
         $scope.adjectives = [];
         $scope.verbs = [];
         $scope.nouns = [];
+        $scope.isCollapsed = true;
 
         //Update words to have the same data that's in the database on the sever
         $http.get('/api/words').success(function(words) {
