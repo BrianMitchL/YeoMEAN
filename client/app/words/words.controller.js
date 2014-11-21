@@ -18,6 +18,10 @@ angular.module('yeoMeanApp')
             $scope.nouns = nouns;
         });
 
+        $scope.$watch('isCollapsed', function(){
+            $scope.toggleText = $scope.isCollapsed ? 'Show List of Words' : 'Hide List of Words';
+        });
+
         $scope.makeSentence = function() {
             var verb = $scope.verbs[getRandomInt(0, $scope.verbs.length - 1)].name;
             var adjective = $scope.adjectives[getRandomInt(0, $scope.adjectives.length - 1)].name;
