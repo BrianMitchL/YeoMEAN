@@ -56,7 +56,7 @@ angular.module('yeoMeanApp')
             if($scope.newNoun === '') {
                 return;
             }
-            $http.post('/api/nouns', { name: $scope.newNoun }).success(function(){
+            $http.post('/api/nouns', { name: inflection.singularize($scope.newNoun) }).success(function(){
                 $http.get('/api/nouns').success(function(nouns) {
                     $scope.nouns = nouns;
                 });
