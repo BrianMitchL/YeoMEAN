@@ -37,7 +37,7 @@ angular.module('yeoMeanApp')
             if($scope.newVerb === '') {
                 return;
             }
-            $http.post('/api/verbs', { name: $scope.newVerb }).success(function(){
+            $http.post('/api/verbs', { name: $scope.newVerb.toLowerCase() }).success(function(){
                 $http.get('/api/verbs').success(function(verbs) {
                     $scope.verbs = verbs;
                 });
@@ -49,7 +49,7 @@ angular.module('yeoMeanApp')
             if($scope.newAdjective === '') {
                 return;
             }
-            $http.post('/api/adjectives', { name: $scope.newAdjective }).success(function(){
+            $http.post('/api/adjectives', { name: $scope.newAdjective.toLowerCase() }).success(function(){
                 $http.get('/api/adjectives').success(function(adjectives) {
                     $scope.adjectives = adjectives;
                 });
