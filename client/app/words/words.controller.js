@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('yeoMeanApp')
-  .controller('WordsCtrl', function ($scope, $http) {
+  .controller('WordsCtrl', function ($scope, $http, $timeout) {
         $scope.verbs = [];
         $scope.adjectives = [];
         $scope.nouns = [];
@@ -41,8 +41,18 @@ angular.module('yeoMeanApp')
                 $http.get('/api/verbs').success(function(verbs) {
                     $scope.verbs = verbs;
                 });
+                $scope.verbSuccess = true;
+                $timeout(function() {
+                  $scope.verbSuccess = false;
+                }, 1500);
                 $scope.newVerb = '';
-            });
+            }).
+              error(function(){
+                  $scope.verbFailure = true;
+                  $timeout(function() {
+                    $scope.verbFailure = false;
+                  }, 1500);
+              });
         };
 
         $scope.addAdjective = function() {
@@ -53,8 +63,18 @@ angular.module('yeoMeanApp')
                 $http.get('/api/adjectives').success(function(adjectives) {
                     $scope.adjectives = adjectives;
                 });
+                $scope.adjectiveSuccess = true;
+                $timeout(function() {
+                  $scope.adjectiveSuccess = false;
+                }, 1500);
                 $scope.newAdjective = '';
-            });
+            }).
+              error(function(){
+                  $scope.adjectiveFailure = true;
+                  $timeout(function() {
+                    $scope.adjectiveFailure = false;
+                  }, 1500);
+              });
         };
 
         $scope.addNoun = function() {
@@ -65,8 +85,18 @@ angular.module('yeoMeanApp')
                 $http.get('/api/nouns').success(function(nouns) {
                     $scope.nouns = nouns;
                 });
+                $scope.nounSuccess = true;
+                $timeout(function() {
+                  $scope.nounSuccess = false;
+                }, 1500);
                 $scope.newNoun = '';
-            });
+            }).
+              error(function(){
+                  $scope.nounFailure = true;
+                  $timeout(function() {
+                    $scope.nounFailure = false;
+                  }, 1500);
+              });
         };
 
         $scope.deleteVerb = function(verb) {

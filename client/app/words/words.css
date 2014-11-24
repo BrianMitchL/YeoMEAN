@@ -1,0 +1,21 @@
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add {
+  -webkit-transition: 250ms ease-in-out all;
+  -moz-transition: 250ms ease-in-out all;
+  -o-transition: 250ms ease-in-out all;
+  transition: 250ms ease-in-out all;
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+.wordAlert {
+  padding: 7px;
+}

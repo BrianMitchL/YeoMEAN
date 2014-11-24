@@ -18,21 +18,27 @@
                 <div class="form-group">
                     <label class="sr-only" for="verb">Verb</label>
                     <input class="form-control" id="verb" type="text" ng-model="newVerb" placeholder="Verb" autocapitalize="off">
-                    <input class="btn btn-default" type="submit" value="Add Verb">
+                    <input class="form-control btn btn-default" type="submit" value="Add Verb">
+                    <div class="form-control alert alert-success fadein fadeout wordAlert" role="alert" ng-show="verbSuccess"><span class="glyphicon glyphicon-ok-circle"></span> Added</div>
+                    <div class="form-control alert alert-danger fadein fadeout wordAlert" role="alert"  ng-show="verbFailure"><span class="glyphicon glyphicon-remove-circle"></span> Failed, Please Try Again</div>
                 </div>
             </form>
             <form class="form-inline" role="form" ng-submit="addAdjective()">
                 <div class="form-group">
                     <label class="sr-only" for="adjective">Adjective</label>
                     <input class="form-control" id="adjective" type="text" ng-model="newAdjective" placeholder="Adjective" autocapitalize="off">
-                    <input class="btn btn-default" type="submit" value="Add Adjective">
+                    <input class="form-control btn btn-default" type="submit" value="Add Adjective">
+                  <div class="form-control alert alert-success fadein fadeout wordAlert" role="alert" ng-show="adjectiveSuccess"><span class="glyphicon glyphicon-ok-circle"></span> Added</div>
+                  <div class="form-control alert alert-danger fadein fadeout wordAlert" role="alert"  ng-show="adjectiveFailure"><span class="glyphicon glyphicon-remove-circle"></span> Failed, Please Try Again</div>
                 </div>
             </form>
             <form class="form-inline" role="form" ng-submit="addNoun()">
                 <div class="form-group">
                     <label class="sr-only" for="noun">Noun</label>
                     <input class="form-control" id="noun" type="text" ng-model="newNoun" placeholder="Noun" autocapitalize="off">
-                    <input class="btn btn-default" type="submit" value="Add Noun">
+                    <input class="form-control btn btn-default" type="submit" value="Add Noun">
+                  <div class="form-control alert alert-success fadein fadeout wordAlert" role="alert" ng-show="nounSuccess"><span class="glyphicon glyphicon-ok-circle"></span> Added</div>
+                  <div class="form-control alert alert-danger fadein fadeout wordAlert" role="alert"  ng-show="nounFailure"><span class="glyphicon glyphicon-remove-circle"></span> Failed, Please Try Again</div>
                 </div>
             </form>
             <h3>Show Words</h3>
