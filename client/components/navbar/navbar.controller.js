@@ -6,6 +6,8 @@ angular.module('yeoMeanApp')
       'title': 'Angular Home',
       'link': '/'
     },
+    {'title': 'About',
+      'link': '/about',},
     {'title': 'Movies',
     'link': '/movies',},
     {'title': 'Words',
