@@ -8,6 +8,8 @@ angular.module('yeoMeanApp')
     },
     {'title': 'About',
       'link': '/about',},
+    {'title': 'Contact',
+      'link': '/contact',},
     {'title': 'Movies',
     'link': '/movies',},
     {'title': 'Words',
