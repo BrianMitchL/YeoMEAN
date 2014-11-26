@@ -4,9 +4,43 @@
     "slug": "new-technologies",
     "file": "2014-10-10-new-technologies.md",
     "date": "2014-10-10",
+    "description": "Ideas on learning to develop for a new platform using Node.js",
     "tags": [
       {"title" : "JavaScript"},
       {"title": "AngularJS"}
+    ]
+  },
+  {
+    "title": "Designing a Logo",
+    "slug": "designing-a-logo",
+    "file": "2014-08-11-designing-a-logo.md",
+    "date": "2014-08-11",
+    "description": "A few thoughts on designing a logo and the process used for Brian Mitchell's new logo",
+    "tags": [
+      {"title" : "design"},
+      {"title": "Photoshop"}
+    ]
+  },
+  {
+    "title": "HDD to SSD",
+    "slug": "hdd-to-ssd",
+    "file": "2014-07-26-hdd-to-ssd.md",
+    "date": "2014-07-26",
+    "description": "Upgrading to a smaller SSD with more than one OS",
+    "tags": [
+      {"title" : "storage"},
+      {"title": "hardware"}
+    ]
+  },
+  {
+    "title": "Long Car Rides (And MICS)",
+    "slug": "long-car-rides-mics",
+    "file": "2014-04-24-long-car-rides-mics.md",
+    "date": "2014-04-24",
+    "description": "Rambling and the plan for MICS 2014",
+    "tags": [
+      {"title" : "travel"},
+      {"title": "robotics"}
     ]
   }
 ]
