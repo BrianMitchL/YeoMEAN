@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
     <title>Brian Mitchell | Angular</title>
-    <meta name="description" content="">
+    <meta name="description" content="Brian Mitchell's Personal Website">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
@@ -20,16 +20,17 @@
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
-      <link rel="stylesheet" href="app/Posts/posts.css">
       <link rel="stylesheet" href="app/about/about.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/contact/contact.css">
       <link rel="stylesheet" href="app/main/main.css">
       <link rel="stylesheet" href="app/movies/movies.css">
+      <link rel="stylesheet" href="app/posts/posts.css">
       <link rel="stylesheet" href="app/words/words.css">
       <link rel="stylesheet" href="components/modal/modal.css">
       <!-- endinjector -->
     <!-- endbuild -->
+    <meta content="brianm.me | Brian Mitchell" property="og:site_name">
   </head>
   <body ng-app="yeoMeanApp">
     <!--[if lt IE 7]>
@@ -64,9 +65,6 @@
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
-          <script src="app/Posts/Posts.service.js"></script>
-          <script src="app/Posts/posts.controller.js"></script>
-          <script src="app/Posts/posts.js"></script>
           <script src="app/about/about.controller.js"></script>
           <script src="app/about/about.js"></script>
           <script src="app/contact/contact.controller.js"></script>
@@ -76,6 +74,9 @@
           <script src="app/markdown/markdown.directive.js"></script>
           <script src="app/movies/movies.controller.js"></script>
           <script src="app/movies/movies.js"></script>
+          <script src="app/posts/Posts.service.js"></script>
+          <script src="app/posts/posts.controller.js"></script>
+          <script src="app/posts/posts.js"></script>
           <script src="app/words/words.controller.js"></script>
           <script src="app/words/words.js"></script>
           <script src="components/modal/modal.service.js"></script>

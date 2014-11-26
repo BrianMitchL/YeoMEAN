@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: Posts', function () {
+describe('Service: posts', function () {
 
   // load the service's module
   beforeEach(module('yeoMeanApp'));
