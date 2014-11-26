@@ -6,6 +6,7 @@ angular.module('yeoMeanApp')
         $scope.adjectives = [];
         $scope.nouns = [];
         $scope.isCollapsed = true;
+        $scope.sentence = "Click a button to generate a sentence."
 
         //Update words to have the same data that's in the database on the sever
         $http.get('/api/verbs').success(function(verbs) {
@@ -32,6 +33,15 @@ angular.module('yeoMeanApp')
               $scope.sentence = "You " + verb + " like " + AvsAnSimple.query(adjective) + " " + adjective + " " + noun + ".";
             }
         };
+
+      $scope.makeGadget = function() {
+        if($scope.nouns.length == 0) {
+          $scope.sentence = "Please add at least one noun for.";
+        } else {
+          var noun = $scope.nouns[getRandomInt(0, $scope.nouns.length - 1)].name;
+          $scope.sentence = "Go go gadget " + noun + "!";
+        }
+      };
 
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
