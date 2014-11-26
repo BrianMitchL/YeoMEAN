@@ -22,6 +22,7 @@ module.exports = function(config) {
       'client/bower_components/angular-animate/angular-animate.js',
       'client/bower_components/lodash/dist/lodash.compat.js',
       'client/bower_components/inflection/inflection.min.js',
+      'client/bower_components/showdown-github-bower/src/showdown.js',
       'client/app/app.js',
       'client/app/app.coffee',
       'client/app/**/*.js',

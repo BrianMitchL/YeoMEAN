@@ -20,6 +20,7 @@
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
+      <link rel="stylesheet" href="app/Posts/posts.css">
       <link rel="stylesheet" href="app/about/about.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/contact/contact.css">
@@ -55,18 +56,24 @@
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/inflection/inflection.min.js"></script>
       <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/showdown-github-bower/src/showdown.js"></script>
+      <script src="bower_components/showdown-github-bower/src/extensions/github.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
+          <script src="app/Posts/Posts.service.js"></script>
+          <script src="app/Posts/posts.controller.js"></script>
+          <script src="app/Posts/posts.js"></script>
           <script src="app/about/about.controller.js"></script>
           <script src="app/about/about.js"></script>
           <script src="app/contact/contact.controller.js"></script>
           <script src="app/contact/contact.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/markdown/markdown.directive.js"></script>
           <script src="app/movies/movies.controller.js"></script>
           <script src="app/movies/movies.js"></script>
           <script src="app/words/words.controller.js"></script>

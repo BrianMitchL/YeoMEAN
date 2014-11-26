@@ -1,0 +1,12 @@
+[
+  {
+    "title": "New Technologies",
+    "slug": "new-technologies",
+    "file": "2014-10-10-new-technologies.md",
+    "date": "2014-10-10",
+    "tags": [
+      {"title" : "JavaScript"},
+      {"title": "AngularJS"}
+    ]
+  }
+]

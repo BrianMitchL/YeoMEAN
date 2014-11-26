@@ -16,8 +16,7 @@
     "lodash": "~2.4.1",
     "inflection": ">=1.5.2",
     "angular-animate": ">=1.3.3",
-    "showdown-github-bower": "brutalhonesty/showdown-bower",
-    "angular-markdown-directive": "~0.3.0"
+    "showdown-github-bower": "brutalhonesty/showdown-bower"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
