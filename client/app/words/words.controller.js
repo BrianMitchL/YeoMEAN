@@ -22,7 +22,7 @@ angular.module('yeoMeanApp')
             $scope.toggleText = $scope.isCollapsed ? 'Show List of Words' : 'Hide List of Words';
         });
 
-        $scope.makeSentence = function() {
+        $scope.makeInsult = function() {
             if($scope.verbs.length == 0 || $scope.adjectives.length == 0 || $scope.nouns.length == 0) {
               $scope.sentence = "Please add at least one word for each type.";
             } else {
