@@ -23,10 +23,14 @@ angular.module('yeoMeanApp')
         });
 
         $scope.makeSentence = function() {
-            var verb = $scope.verbs[getRandomInt(0, $scope.verbs.length - 1)].name;
-            var adjective = $scope.adjectives[getRandomInt(0, $scope.adjectives.length - 1)].name;
-            var noun = $scope.nouns[getRandomInt(0, $scope.nouns.length - 1)].name;
-            $scope.sentence = "You " + verb + " like " + AvsAnSimple.query(adjective) + " " + adjective + " " + noun + ".";
+            if($scope.verbs.length == 0 || $scope.adjectives.length == 0 || $scope.nouns.length == 0) {
+              $scope.sentence = "Please add at least one word for each type.";
+            } else {
+              var verb = $scope.verbs[getRandomInt(0, $scope.verbs.length - 1)].name;
+              var adjective = $scope.adjectives[getRandomInt(0, $scope.adjectives.length - 1)].name;
+              var noun = $scope.nouns[getRandomInt(0, $scope.nouns.length - 1)].name;
+              $scope.sentence = "You " + verb + " like " + AvsAnSimple.query(adjective) + " " + adjective + " " + noun + ".";
+            }
         };
 
         function getRandomInt(min, max) {
