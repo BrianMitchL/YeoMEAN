@@ -6,7 +6,7 @@ angular.module('yeoMeanApp')
         $scope.adjectives = [];
         $scope.nouns = [];
         $scope.isCollapsed = true;
-        $scope.sentence = "Click a button to generate a sentence."
+        $scope.sentence = "Click a button to generate a sentence.";
 
         //Update words to have the same data that's in the database on the sever
         $http.get('/api/verbs').success(function(verbs) {
