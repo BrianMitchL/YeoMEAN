@@ -34,14 +34,14 @@ angular.module('yeoMeanApp')
             }
         };
 
-      $scope.makeGadget = function() {
-        if($scope.nouns.length == 0) {
-          $scope.sentence = "Please add at least one noun for.";
-        } else {
-          var noun = $scope.nouns[getRandomInt(0, $scope.nouns.length - 1)].name;
-          $scope.sentence = "Go go gadget " + noun + "!";
-        }
-      };
+        $scope.makeGadget = function() {
+          if($scope.nouns.length == 0) {
+            $scope.sentence = "Please add at least one noun for.";
+          } else {
+            var noun = $scope.nouns[getRandomInt(0, $scope.nouns.length - 1)].name;
+            $scope.sentence = "Go go gadget " + noun + "!";
+          }
+        };
 
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
