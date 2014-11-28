@@ -3,16 +3,16 @@
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>{{ post.title }}</h1>
-    <small>{{ post.date }}</small>
+    <p>{{ post.date }}</p>
   </div>
 </header>
 
-<div class="container">
+<div class="container extra-margin-top">
   <div class="row">
     <div class="col-lg-12">
       <div markdown link="{{ post.file }}"></div>
-      <h5>Tags:</h5>
       <ul class="list-inline">
+        <li class="h5">Tags:</li>
         <li ng-repeat="tag in post.tags">{{ tag.title }}</li>
       </ul>
     </div>

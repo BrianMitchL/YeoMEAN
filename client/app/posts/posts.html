@@ -12,8 +12,8 @@
       <div ng-repeat="post in posts" ng-class="{'last':$last}">
         <h1><a ng-href="/posts/{{ post.slug }}">{{ post.title }}</a><small> {{ post.date }} </small></h1>
         <div markdown link="{{ post.file }}"></div>
-        <h5>Tags:</h5>
         <ul class="list-inline">
+          <li class="h5">Tags:</li>
           <li ng-repeat="tag in post.tags">{{ tag.title }}</li>
         </ul>
         <hr class="hrOrange">
