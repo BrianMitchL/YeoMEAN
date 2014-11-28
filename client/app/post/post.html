@@ -1,0 +1,22 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>{{ post.title }}</h1>
+    <small>{{ post.date }}</small>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div markdown link="{{ post.file }}"></div>
+      <h5>Tags:</h5>
+      <ul class="list-inline">
+        <li ng-repeat="tag in post.tags">{{ tag.title }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" ng-include="'components/footer/footer.html'"></footer>
