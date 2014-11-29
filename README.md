@@ -15,6 +15,8 @@ $ npm install -g bower
 $ npm install -g yo
 $ npm install -g grunt
 $ npm install -g generator-angular-fullstack
+$ npm install
+$ bower install
 ```
 
 To use yo generators, see [https://github.com/DaftMonk/generator-angular-fullstack](https://github.com/DaftMonk/generator-angular-fullstack)
@@ -26,3 +28,7 @@ For example, running ```yo angular-fullstack:route testing``` from a terminal wi
 Run ```grunt serve``` to start node and run the web application on [http://localhost:9000](http://localhost:9000).
 
 To run tests, run ```grunt test```.
+
+##Attributions
+
+Some icons on the site are created by Volkan Olmez and can be found on [Dribble](https://dribbble.com/shots/1605630-60-Social-media-icons-set-PSD).
