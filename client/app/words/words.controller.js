@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('yeoMeanApp')
-  .controller('WordsCtrl', function ($scope, $http, $timeout) {
+  .controller('WordsCtrl', function ($rootScope, $scope, $http, $timeout) {
+        $rootScope.header = "Brian Mitchell | Words";
         $scope.verbs = [];
         $scope.adjectives = [];
         $scope.nouns = [];

@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('yeoMeanApp')
-  .controller('MoviesCtrl', function ($scope, $http) {
+  .controller('MoviesCtrl', function ($rootScope, $scope, $http) {
+    $rootScope.header = "Brian Mitchell | Movies";
     $scope.movieList = [];
 
     //Update movieList to have the same data that's in the database on the sever

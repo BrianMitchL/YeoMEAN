@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('yeoMeanApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.message = 'Hello';
+  .controller('AboutCtrl', function ($rootScope, $scope) {
+    $rootScope.header = "Brian Mitchell | About";
   });
