@@ -16,26 +16,17 @@
             <li class="h5">Tags:</li>
             <li ng-repeat="tag in post.tags">{{ tag.title }}</li>
           </ul>
-          <div id="disqus_thread"></div>
-          <script type="text/javascript">
-            var disqus_shortname = 'brianmme';
-            (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <div comments="post"></div>
       </div>
-        <div ng-show="error">
-            <h1>Not found <span>:(</span></h1>
-            <p>Sorry, but the page you were trying to view does not exist.</p>
-            <p>It looks like this was the result of either:</p>
-            <ul>
-                <li>a mistyped address</li>
-                <li>an out-of-date link</li>
-            </ul>
-        </div>
+      <div ng-show="error">
+          <h1>Not found <span>:(</span></h1>
+          <p>Sorry, but the page you were trying to view does not exist.</p>
+          <p>It looks like this was the result of either:</p>
+          <ul>
+              <li>a mistyped address</li>
+              <li>an out-of-date link</li>
+          </ul>
+      </div>
     </div>
   </div>
 </div>

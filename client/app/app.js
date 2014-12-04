@@ -6,7 +6,8 @@ angular.module('yeoMeanApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'ngAnimate'
+  'ngAnimate',
+  'mvd.comments'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

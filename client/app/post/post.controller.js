@@ -13,4 +13,8 @@ angular.module('yeoMeanApp')
       $rootScope.metaType = "article";
       $rootScope.metaImage = "/assets/images/BM-Logo-Large.png";
     });
+  }).run(function (commentConfig) {
+    commentConfig
+      .setForumName("brianmme")//Specify our forum name/site id for this site
+      .setProvider('disqus');//Specify we want to use disqus
   });
