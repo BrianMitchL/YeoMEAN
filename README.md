@@ -2,7 +2,7 @@ YeoMEAN [![Build Status](https://travis-ci.org/bman4789/YeoMEAN.svg?branch=maste
 =======
 
 A Yeoman based, generator-angular-fullstack project.
-This site is hosted by Heroku and can be accessed at [https://angular.brianm.me/](https://angular.brianm.me/)
+This site is hosted by Heroku and can be accessed at [https://brianm.me/](https://brianm.me/)
 
 The goal of this project is to learn and experiment with the MEAN stack. The word "YeoMEAN" is a pun combining the "Yeoman" generator and "MEAN" stack.
 
