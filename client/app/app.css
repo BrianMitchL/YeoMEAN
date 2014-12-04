@@ -48,6 +48,10 @@ body {
   margin-top: 1em;
 }
 
+.extra-padding-bottom {
+    padding-bottom: 1em;
+}
+
 @media only screen and (max-width : 320px) {
   #banner h1 {
     font-size: 3em;
