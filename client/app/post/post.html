@@ -16,6 +16,7 @@
             <li class="h5">Tags:</li>
             <li ng-repeat="tag in post.tags">{{ tag.title }}</li>
           </ul>
+        <div share-square="true" share-links="Facebook, Twitter, LinkedIn, Google-Plus" share-url="{{post.url}}" share-title="{{post.title}}"></div>
         <div comments="post"></div>
       </div>
       <div ng-show="error">
