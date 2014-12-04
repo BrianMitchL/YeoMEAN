@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title ng-bind="header"></title>
+    <title>{{metaTitle}}</title>
     <meta name="description" content="Brian Mitchell's Personal Website">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -31,7 +31,11 @@
       <link rel="stylesheet" href="components/modal/modal.css">
       <!-- endinjector -->
     <!-- endbuild -->
-    <meta content="brianm.me | Brian Mitchell" property="og:site_name">
+    <meta property="og:site_name" content="brianm.me | Brian Mitchell">
+    <meta property="og:title" content="{{metaTitle}}">
+    <meta property="og:description" content="{{metaDescription}}">
+    <meta property="og:type" content="{{metaType}}">
+    <meta property="og:image" content="{{metaImage}}">
   </head>
   <body>
     <!--[if lt IE 7]>

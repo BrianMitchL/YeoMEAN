@@ -2,7 +2,10 @@
 
 angular.module('yeoMeanApp')
   .controller('MoviesCtrl', function ($rootScope, $scope, $http) {
-    $rootScope.header = "Brian Mitchell | Movies";
+    $rootScope.metaTitle = "Movies | Brian Mitchell";
+    $rootScope.metaDescription = "A movie ratings page";
+    $rootScope.metaType = "website";
+    $rootScope.metaImage = "/assets/images/BM-Logo-Large.png";
     $scope.movieList = [];
 
     //Update movieList to have the same data that's in the database on the sever

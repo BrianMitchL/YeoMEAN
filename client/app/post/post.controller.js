@@ -8,6 +8,9 @@ angular.module('yeoMeanApp')
             $scope.post = {"title":"404", "date":"This page does not exist, please check your URL and try again"};
             $scope.error = true;
         }
-      $rootScope.header = "Brian Mitchell | " + $scope.post.title;
+      $rootScope.metaTitle = $scope.post.title + " | Brian Mitchell";
+      $rootScope.metaDescription = $scope.post.description;
+      $rootScope.metaType = "article";
+      $rootScope.metaImage = "/assets/images/BM-Logo-Large.png";
     });
   });

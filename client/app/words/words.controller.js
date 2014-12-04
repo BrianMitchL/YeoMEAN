@@ -2,7 +2,10 @@
 
 angular.module('yeoMeanApp')
   .controller('WordsCtrl', function ($rootScope, $scope, $http, $timeout) {
-        $rootScope.header = "Brian Mitchell | Words";
+        $rootScope.metaTitle = "Words | Brian Mitchell";
+        $rootScope.metaDescription = "Word scrambling and insult generators based on the MEAN stack";
+        $rootScope.metaType = "website";
+        $rootScope.metaImage = "/assets/images/BM-Logo-Large.png";
         $scope.verbs = [];
         $scope.adjectives = [];
         $scope.nouns = [];
