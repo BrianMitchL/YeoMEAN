@@ -32,3 +32,5 @@ To run tests, run ```grunt test```.
 ##Attributions
 
 Some icons on the site are created by Volkan Olmez and can be found on [Dribble](https://dribbble.com/shots/1605630-60-Social-media-icons-set-PSD).
+
+The blog posts were adapted from [this](http://hugodias.github.io/angularjs/markdown/blog/creating-a-markdown-blog-using-angular-js/) tutorial by Hugo Dias.
