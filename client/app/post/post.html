@@ -16,7 +16,14 @@
             <li class="h5">Tags:</li>
             <li ng-repeat="tag in post.tags">{{ tag.title }}</li>
           </ul>
-        <div share-square="true" share-links="Facebook, Twitter, LinkedIn, Google-Plus, Reddit, Tumblr" url="{{post.url}}" share-title="{{post.title}}"></div>
+        <div class="share">
+          <a href="http://facebook.com/sharer.php?u={{post.url}}" class="fa fa-facebook-square" target="_blank"></a>
+          <a href="http://twitter.com/intent/tweet?text=Check out @bman4789's post '{{post.title}}' at {{post.url}}" class="fa fa-twitter-square" target="_blank"></a>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{post.url}}&amp;title={{post.title}}" class="fa fa-linkedin-square" target="_blank"></a>
+          <a href="https://plus.google.com/share?url={{post.url}}" class="fa fa-google-plus-square" target="_blank"></a>
+          <a href="http://reddit.com/submit?url={{post.url}}&amp;title={{post.title}}" class="fa fa-reddit-square" target="_blank"></a>
+          <a href="http://www.tumblr.com/share/link?url={{post.url}}&amp;name={{post.title}}" class="fa fa-tumblr-square" target="_blank"></a>
+        </div>
         <div comments="post"></div>
       </div>
       <div ng-show="error">

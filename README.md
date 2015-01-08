@@ -34,3 +34,5 @@ To run tests, run ```grunt test```.
 Some icons on the site are created by Volkan Olmez and can be found on [Dribble](https://dribbble.com/shots/1605630-60-Social-media-icons-set-PSD).
 
 The blog posts were adapted from [this](http://hugodias.github.io/angularjs/markdown/blog/creating-a-markdown-blog-using-angular-js/) tutorial by Hugo Dias.
+
+Social share buttons were adapted from [this](https://github.com/tinacious/angular-easy-social-share) directive by Tina Holly. My fork with a couple new services can be found [here](https://github.com/bman4789/angular-easy-social-share).

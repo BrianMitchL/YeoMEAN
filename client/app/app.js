@@ -7,8 +7,7 @@ angular.module('yeoMeanApp', [
   'ngRoute',
   'ui.bootstrap',
   'ngAnimate',
-  'mvd.comments',
-  'td.easySocialShare'
+  'mvd.comments'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

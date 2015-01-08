@@ -1,14 +1,13 @@
-.td-easy-social-share a {
+.share a {
   font-size: 3em;
-  margin-right: 5px;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-.td-easy-social-share a:hover {
+.share a:hover {
   text-decoration: none;
-  color: #333;
+  color: #FF6F00;
   opacity: 0.7;
 }
