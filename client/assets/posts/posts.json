@@ -1,5 +1,19 @@
 [
   {
+    "title": "Server and Desktop Setup",
+    "slug": "server-desktop-setup",
+    "file": "2015-01-11-server-desktop-setup.md",
+    "url": "https://brianm.me/posts/server-desktop-setup",
+    "date": "2015-01-11",
+    "description": "An overview of the hardware and software I run on my desktop and server",
+    "tags": [
+      {"title" : "hardware"},
+      {"title": "server"},
+      {"title": "CentOS"},
+      {"title": "OS X"}
+    ]
+  },
+  {
     "title": "New Technologies",
     "slug": "new-technologies",
     "file": "2014-10-10-new-technologies.md",
