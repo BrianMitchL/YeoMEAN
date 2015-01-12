@@ -1,4 +1,4 @@
-A little over a week ago I finished building my new server. It's the second computer I've build (after my desktop), and is primarily a file and media server. Ryan ([@ryanmr](https://twitter.com/ryanmr)) asked me to do a spec sheet, so this is the result.
+A little over a week ago I finished building my new server. It's the second computer I've built (after my desktop), and is primarily a file and media server. Ryan ([@ryanmr](https://twitter.com/ryanmr)) asked me to do a spec sheet, so this is the result.
 
 # The Hardware
 
