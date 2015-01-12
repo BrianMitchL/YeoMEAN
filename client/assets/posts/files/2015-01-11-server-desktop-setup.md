@@ -3,7 +3,7 @@ A little over a week ago I finished building my new server. It's the second comp
 # The Hardware
 
 ## Desktop
-Build in September, 2013
+Built in September, 2013
 #### Parts
 + Gigabyte GA-Z87MX-D3H mATX Motherboard
 + Intel Core i7-4770K CPU
@@ -28,7 +28,7 @@ Price: Not all of these parts were bought (or gifted) at once or even originally
 Note: The 1TB hard drive has about 4.6 years of power on time (but no errors!), so it'll probably be dying soon, and when it does, I'm going to be switching around my other 3.5" drives as I need to upgrade the size on others.
 
 ## Server
-Build in January, 2015
+Built in January, 2015
 #### Parts
 + Gigabyte GA-Z97N-WIFI Mini ITX Motherboard
 + Intel Core i5-4690K CPU
