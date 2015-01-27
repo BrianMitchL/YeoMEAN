@@ -13,15 +13,9 @@ angular.module('yeoMeanApp')
         $scope.sentence = "Click a button to generate a sentence.";
 
         //Update words to have the same data that's in the database on the sever
-        $http.get('/api/verbs').success(function(verbs) {
-            $scope.verbs = verbs;
-        });
-        $http.get('/api/adjectives').success(function(adjectives) {
-            $scope.adjectives = adjectives;
-        });
-        $http.get('/api/nouns').success(function(nouns) {
-            $scope.nouns = nouns;
-        });
+        getVerbs();
+        getAdjs();
+        getNouns();
 
         $scope.$watch('isCollapsed', function(){
             $scope.toggleText = $scope.isCollapsed ? 'Show List of Words' : 'Hide List of Words';
@@ -56,9 +50,7 @@ angular.module('yeoMeanApp')
                 return;
             }
             $http.post('/api/verbs', { name: $scope.newVerb.toLowerCase() }).success(function(){
-                $http.get('/api/verbs').success(function(verbs) {
-                    $scope.verbs = verbs;
-                });
+                getVerbs();
                 $scope.verbSuccess = true;
                 $timeout(function() {
                   $scope.verbSuccess = false;
@@ -78,9 +70,7 @@ angular.module('yeoMeanApp')
                 return;
             }
             $http.post('/api/adjectives', { name: $scope.newAdjective.toLowerCase() }).success(function(){
-                $http.get('/api/adjectives').success(function(adjectives) {
-                    $scope.adjectives = adjectives;
-                });
+                getAdjs();
                 $scope.adjectiveSuccess = true;
                 $timeout(function() {
                   $scope.adjectiveSuccess = false;
@@ -100,9 +90,7 @@ angular.module('yeoMeanApp')
                 return;
             }
             $http.post('/api/nouns', { name: inflection.singularize($scope.newNoun) }).success(function(){
-                $http.get('/api/nouns').success(function(nouns) {
-                    $scope.nouns = nouns;
-                });
+                getNouns();
                 $scope.nounSuccess = true;
                 $timeout(function() {
                   $scope.nounSuccess = false;
@@ -119,25 +107,52 @@ angular.module('yeoMeanApp')
 
         $scope.deleteVerb = function(verb) {
             $http.delete('/api/verbs/' + verb._id).success(function(){
-                $http.get('/api/verbs').success(function(verbs) {
-                    $scope.verbs = verbs;
-                });
+                getVerbs();
             });
         };
 
         $scope.deleteAdjective = function(adjective) {
             $http.delete('/api/adjectives/' + adjective._id).success(function(){
-                $http.get('/api/adjectives').success(function(adjectives) {
-                    $scope.adjectives = adjectives;
-                });
+                getAdjs();
             });
         };
 
         $scope.deleteNoun = function(noun) {
             $http.delete('/api/nouns/' + noun._id).success(function(){
-                $http.get('/api/nouns').success(function(nouns) {
-                    $scope.nouns = nouns;
-                });
+                getNouns();
             });
         };
+
+        function getVerbs() {
+            $http.get('/api/verbs').success(function(verbs) {
+                $scope.verbs = verbs.sort(function(a, b){
+                    var wordA=a.name.toLowerCase(), wordB=b.name.toLowerCase();
+                    if (wordA < wordB) return -1;
+                    if (wordA > wordB) return 1;
+                    return 0;
+                });
+            });
+        }
+
+        function getAdjs() {
+            $http.get('/api/adjectives').success(function(adjectives) {
+                $scope.adjectives = adjectives.sort(function(a, b){
+                    var wordA=a.name.toLowerCase(), wordB=b.name.toLowerCase();
+                    if (wordA < wordB) return -1;
+                    if (wordA > wordB) return 1;
+                    return 0;
+                });
+            });
+        }
+
+        function getNouns() {
+            $http.get('/api/nouns').success(function(nouns) {
+                $scope.nouns = nouns.sort(function(a, b){
+                    var wordA=a.name.toLowerCase(), wordB=b.name.toLowerCase();
+                    if (wordA < wordB) return -1;
+                    if (wordA > wordB) return 1;
+                    return 0;
+                });
+            });
+        }
   });
