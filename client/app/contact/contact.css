@@ -13,7 +13,7 @@
   height: 40px;
 }
 
-a.darken img {
+a.lighten img {
 
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -22,6 +22,6 @@ a.darken img {
   transition: all 0.2s linear;
 }
 
-a.darken:hover img {
+a.lighten:hover img {
   opacity: 0.7;
 }
