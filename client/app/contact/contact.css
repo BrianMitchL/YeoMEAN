@@ -1,27 +1,44 @@
-#sitesList {
-  list-style-type: none;
-  padding: 0;
+.social-icons .fa {
+  font-size: 2.2em;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 15px;
+  text-align: center;
+  color: #FFF;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-#sitesList li {
-  padding-top: 2px;
-  padding-bottom: 2px;
+.social-icons.icon-circle .fa{
+  border-radius: 50%;
+}
+.social-icons.icon-rounded .fa{
+  border-radius:5px;
+}
+.social-icons.icon-flat .fa{
+  border-radius: 0;
 }
 
-.social-img {
-  width: 40px;
-  height: 40px;
+.social-icons .fa:hover, .social-icons .fa:active {
+  color: #FFF;
 }
 
-a.lighten img {
-
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -ms-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-a.lighten:hover img {
-  opacity: 0.7;
-}
+.social-icons .fa-facebook{background-color:#3C599F;}
+.social-icons .fa-github{background-color:#070709;}
+.social-icons .fa-google-plus{background-color:#CF3D2E;}
+.social-icons .fa-instagram{background-color:#A1755C;}
+.social-icons .fa-lastfm{background-color:#DF1426;}
+.social-icons .fa-linkedin{background-color:#0085AE;}
+.social-icons .fa-reddit{background-color:#232323;}
+.social-icons .fa-spotify{background-color:#598401;}
+.social-icons .fa-soundcloud{background-color:#F76411;}
+.social-icons .fa-steam{background-color:#17191E;}
+.social-icons .fa-tumblr{background-color:#314E6C;}
+.social-icons .fa-twitter{background-color:#32CCFE;}
+.social-icons .fa-vine{background-color:#01B784;}
+.social-icons .fa-youtube{background-color:#C52F30;}
