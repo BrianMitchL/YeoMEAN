@@ -1,13 +1,28 @@
-.share a {
-  font-size: 3em;
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -ms-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+.share-icons li {
+  padding: 0.1em;
 }
-.share a:hover {
-  text-decoration: none;
-  color: #FF6F00;
-  opacity: 0.7;
+
+.share-icons .fa {
+  font-size: 2.5em;
+  opacity: 0.8;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
+
+.share-icons.icon-rounded .fa{
+  border-radius:5px;
+}
+
+.share-icons .fa:hover, .social-icons .fa:active {
+  opacity: 1;
+}
+
+.share-icons .fa-facebook-square{color:#3C599F;}
+.share-icons .fa-google-plus-square{color:#CF3D2E;}
+.share-icons .fa-linkedin-square{color:#0085AE;}
+.share-icons .fa-reddit-square{color:#232323;}
+.share-icons .fa-tumblr-square{color:#314E6C;}
+.share-icons .fa-twitter-square{color:#32CCFE;}

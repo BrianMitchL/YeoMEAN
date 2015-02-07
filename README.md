@@ -35,4 +35,4 @@ The blog posts were adapted from [this](http://hugodias.github.io/angularjs/mark
 
 Social share buttons were adapted from [this](https://github.com/tinacious/angular-easy-social-share) directive by Tina Holly. My fork with a couple new services can be found [here](https://github.com/bman4789/angular-easy-social-share).
 
-The styling for the brand and social buttons on the contact page was adapted from Amey Raut's demo, which can be found [here](http://codepen.io/ameyraut/pen/yfzog).
+The styling for the brand and social/share buttons on the contact page and posts was adapted from Amey Raut's demo, which can be found [here](http://codepen.io/ameyraut/pen/yfzog).
