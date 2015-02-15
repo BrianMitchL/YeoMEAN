@@ -21,17 +21,14 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="movie in movieList">
-                        <td ng-if="movie.isEditing">
-                            <input class="form-control" type="text" size="30" ng-model="movie.name" placeholder="Movie Name">
+                        <td>
+                          {{movie.name}}
                         </td>
                         <td ng-if="movie.isEditing">
                             <input class="form-control" type="number" max="10" min="1" ng-model="movie.rating" placeholder="Movie Rating (1-10)">
                         </td>
                         <td ng-if="movie.isEditing">
                             <button class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
-                        </td>
-                        <td ng-if="!movie.isEditing">
-                            {{movie.name}}
                         </td>
                         <td ng-if="!movie.isEditing">
                             {{movie.rating}}
