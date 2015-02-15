@@ -17,7 +17,7 @@ footer {
   padding: 10px 0;
   margin-top: 70px;
   font-size: 80%;
-  border-top: 1px solid #FF6F00;
+  border-top: 1px solid #FF8C01;
 }
 
 #banner {
@@ -37,11 +37,11 @@ footer {
   color: #F5F5F5;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+  background: #FF8C01;
 }
 
 .hrOrange {
-  border-top: 1px solid #FF6F00;
+  border-top: 1px solid #FF8C01;
 }
 
 .extra-margin-top {
@@ -50,6 +50,10 @@ footer {
 
 .extra-padding-bottom {
     padding-bottom: 1em;
+}
+
+input.btn {
+  padding: 2px 10px;
 }
 
 @media only screen and (max-width : 320px) {

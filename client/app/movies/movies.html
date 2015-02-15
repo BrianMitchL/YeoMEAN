@@ -22,13 +22,13 @@
                 <tbody>
                     <tr ng-repeat="movie in movieList">
                         <td ng-if="movie.isEditing">
-                            <input class="form-control input-sm" type="text" size="30" ng-model="movie.name" placeholder="Movie Name">
+                            <input class="form-control" type="text" size="30" ng-model="movie.name" placeholder="Movie Name">
                         </td>
                         <td ng-if="movie.isEditing">
-                            <input class="form-control input-sm" type="number" max="10" min="1" ng-model="movie.rating" placeholder="Movie Rating (1-10)">
+                            <input class="form-control" type="number" max="10" min="1" ng-model="movie.rating" placeholder="Movie Rating (1-10)">
                         </td>
                         <td ng-if="movie.isEditing">
-                            <button class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
+                            <input class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
                         </td>
                         <td ng-if="!movie.isEditing">
                             {{movie.name}}
@@ -44,15 +44,15 @@
             </table>
           <hr class="hrOrange">
         </div>
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1 well">
             <h3>Add A new Movie:</h3>
-            <form role="form" ng-submit="addMovie()">
-                <label for="newMovieName">New Movie Name</label>
-                <input class="form-control" id="newMovieName" type="text" ng-model="newMovie" size="30"placeholder="New Movie Name">
-                <label for="newMovieRating">New Movie Rating</label>
-                <input class="form-control" id="newMovieRating" type="number" max="10" min="1" ng-model="newRating" placeholder="New Movie Rating (1-10)">
-                <input class="btn btn-primary" type="submit" value="Add">
-            </form>
+            <div class="form-group">
+                <label class="sr-only" for="newMovieName">New Movie Name</label>
+                <input class="form-control floating-label" id="newMovieName" type="text" ng-model="newMovie" size="30"placeholder="New Movie Name">
+                <label class="sr-only" for="newMovieRating">New Movie Rating</label>
+                <input class="form-control floating-label" id="newMovieRating" type="number" max="10" min="1" ng-model="newRating" placeholder="New Movie Rating (1-10)">
+                <button class="btn btn-primary" ng-click="addMovie()">Add</button>
+            </div>
         </div>
     </div>
 </div>

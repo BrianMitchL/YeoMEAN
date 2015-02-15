@@ -19,31 +19,31 @@
                 <div class="form-group">
                     <label class="sr-only" for="verb">Verb</label>
                     <input class="form-control" id="verb" type="text" ng-model="newVerb" placeholder="Verb" autocapitalize="off">
-                    <input class="form-control btn btn-default" type="submit" value="Add Verb">
-                    <div class="form-control alert alert-success fadein fadeout wordAlert" role="alert" ng-show="verbSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</div>
-                    <div class="form-control alert alert-danger fadein fadeout wordAlert" role="alert"  ng-show="verbFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</div>
+                    <input class="form-control btn btn-primary" type="submit" value="Add Verb">
+                    <p class="form-control fadein fadeout text-success" ng-show="verbSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
+                    <p class="form-control fadein fadeout text-danger" ng-show="verbFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
                 </div>
             </form>
             <form class="form-inline" role="form" ng-submit="addAdjective()">
                 <div class="form-group">
                     <label class="sr-only" for="adjective">Adjective</label>
                     <input class="form-control" id="adjective" type="text" ng-model="newAdjective" placeholder="Adjective" autocapitalize="off">
-                    <input class="form-control btn btn-default" type="submit" value="Add Adjective">
-                  <div class="form-control alert alert-success fadein fadeout wordAlert" role="alert" ng-show="adjectiveSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</div>
-                  <div class="form-control alert alert-danger fadein fadeout wordAlert" role="alert"  ng-show="adjectiveFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</div>
+                    <input class="form-control btn btn-primary" type="submit" value="Add Adjective">
+                  <p class="form-control fadein fadeout text-success" ng-show="adjectiveSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
+                  <p class="form-control fadein fadeout wordAlert" ng-show="adjectiveFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
                 </div>
             </form>
             <form class="form-inline" role="form" ng-submit="addNoun()">
                 <div class="form-group">
                     <label class="sr-only" for="noun">Noun</label>
                     <input class="form-control" id="noun" type="text" ng-model="newNoun" placeholder="Noun" autocapitalize="off">
-                    <input class="form-control btn btn-default" type="submit" value="Add Noun">
-                  <div class="form-control alert alert-success fadein fadeout wordAlert" role="alert" ng-show="nounSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</div>
-                  <div class="form-control alert alert-danger fadein fadeout wordAlert" role="alert"  ng-show="nounFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</div>
+                    <input class="form-control btn btn-primary" type="submit" value="Add Noun">
+                  <p class="form-control fadein fadeout text-success" ng-show="nounSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
+                  <p class="form-control fadein fadeout text-danger" ng-show="nounFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
                 </div>
             </form>
-            <h3>Show Words</h3>
-            <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">{{ toggleText }}</button>
+            <h3>Show Existing Words</h3>
+            <button class="btn btn-info" ng-click="isCollapsed = !isCollapsed">{{ toggleText }}</button>
             <div collapse="isCollapsed">
               <hr class="hrOrange">
                 <div class="col-sm-4">
