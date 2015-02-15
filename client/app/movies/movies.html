@@ -28,7 +28,7 @@
                             <input class="form-control" type="number" max="10" min="1" ng-model="movie.rating" placeholder="Movie Rating (1-10)">
                         </td>
                         <td ng-if="movie.isEditing">
-                            <input class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
+                            <button class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
                         </td>
                         <td ng-if="!movie.isEditing">
                             {{movie.name}}
