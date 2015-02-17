@@ -20,7 +20,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="movie in movieList">
+                    <tr ng-repeat="movie in displayList">
                         <td>
                           {{movie.name}}
                         </td>
@@ -39,6 +39,9 @@
                     </tr>
                 </tbody>
             </table>
+          <div class="text-center">
+            <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+          </div>
           <hr class="hrOrange">
         </div>
         <div class="col-md-10 col-md-offset-1 well">
