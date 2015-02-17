@@ -20,5 +20,35 @@ Movie.find({}).remove(function() {
     }, {
         name : 'Elmo in Grouchland',
         rating : 2
+    }, {
+      name : 'Snakes on a Plane',
+      rating : 6
+    }, {
+      name : 'Flight Plan',
+      rating : 8
+    }, {
+      name : 'Doctor Who',
+      rating : 2
+    }, {
+      name : 'Angular Tutorials',
+      rating : 10
+    }, {
+      name : 'A Sweet Movie',
+      rating : 7
+    }, {
+      name : 'Wubwub',
+      rating : 9
+    }, {
+      name : 'Distractions',
+      rating : 1
+    }, {
+      name : 'Words',
+      rating : 5
+    }, {
+      name : 'Peanuts: A Documentary',
+      rating : 8
+    }, {
+      name : 'How to Computer',
+      rating : 2
     });
 });
