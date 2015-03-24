@@ -1,23 +1,59 @@
-html {
-  position: relative;
-  min-height: 100%;
-}
+/*html {*/
+  /*position: relative;*/
+  /*min-height: 100%;*/
+/*}*/
 
-body {
-  margin-bottom: 96px;
-}
+/*body {*/
+  /*margin-bottom: 96px;*/
+/*}*/
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  /*width: 100%;*/
   /* Set the fixed height of the footer here */
-  height: 96px;
+  /*height: 96px;*/
   text-align: center;
-  padding: 10px 0;
-  margin-top: 70px;
+  /*padding: 10px 0;*/
+  /*margin-top: 70px;*/
   font-size: 80%;
   border-top: 1px solid #FF8C01;
+}
+
+/*input.btn {*/
+  /*padding: 2px 10px;*/
+/*}*/
+
+@media only screen and (max-width : 320px) {
+  #banner h1 {
+    font-size: 3em;
+  }
+}
+
+/**
+ *Font Awesome Fonts
+ */
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.3.0');
+    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 #banner {
@@ -49,54 +85,88 @@ footer {
 }
 
 .extra-padding-bottom {
-    padding-bottom: 1em;
+  padding-bottom: 1em;
 }
 
-input.btn {
-  padding: 2px 10px;
+.list-unstyled {
+  list-style-type: none;
 }
 
-@media only screen and (max-width : 320px) {
-  #banner h1 {
-    font-size: 3em;
-  }
+.list-inline > li {
+  display: inline;
 }
 
-/**
- * Bootstrap Fonts
- */
+/* Toolbar area */
 
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
-    src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
-    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
-    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+.menuBtn {
+  background-color: transparent;
+  border: none;
+  height: 38px;
+  margin: 16px;
+  width: 36px;
 }
 
-/**
- *Font Awesome Fonts
- */
-
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
-    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
-    url('../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
-    url('../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
-    url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+md-toolbar h1 {
+  margin: auto;
 }
 
-/**
- * App-wide Styles
- */
+md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+}
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+.menuBtn > i {
+  color: white;
+}
+
+/* Sidenav area */
+
+md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+md-list .md-button.selected {
+  color: #03a9f4;
+}
+
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  max-width: 200px !important;
+}
+
+/* Primary content area */
+
+#content {
+  overflow: hidden;
+}
+#content md-content {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+#content .md-button.action {
+  background-color: transparent;
+  border: none;
+  height: 38px;
+  margin: 8px auto 16px 0;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  width: 36px;
+}
+
+#content img {
+  display: block;
+  height: auto;
+  max-width: 500px;
+}
+
+/* Utils */
+
+.content-wrapper {
+  position: relative;
 }

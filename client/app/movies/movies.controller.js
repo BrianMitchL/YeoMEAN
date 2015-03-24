@@ -1,37 +1,16 @@
 'use strict';
 
 angular.module('yeoMeanApp')
-  .controller('MoviesCtrl', function ($rootScope, $scope, $http, $log) {
+  .controller('MoviesCtrl', function ($rootScope, $scope, $http, Pagination) {
     $rootScope.metaTitle = "Movies | Brian Mitchell";
     $rootScope.metaDescription = "A movie ratings page";
     $rootScope.metaType = "website";
     $rootScope.metaImage = "/assets/images/BM-Logo-Large.png";
+    $scope.title = "Movies";
     $scope.movieList = [];
-    $scope.displayList = [];
-    $scope.totalItems = 0;
-    $scope.currentPage = 1;
-    $scope.itemsPerPage = 10;
+    $scope.pagination = Pagination.getNew(10);
 
     getMovies();
-
-    $scope.pageChanged = function() {
-      var index = ($scope.currentPage - 1) * $scope.itemsPerPage;
-      var numOnPage = $scope.itemsPerPage;
-      if ($scope.totalItems - index < $scope.itemsPerPage) {
-          numOnPage = $scope.totalItems - index;
-      }
-      $scope.displayList = [];
-      for (var i = 0; i < numOnPage; i++) {
-          $scope.displayList[i] = $scope.movieList[index + i];
-      }
-      //Show a full table on the last page if it's not full
-      //if (numOnPage != $scope.itemsPerPage) {
-      //    for (var i = numOnPage; i < $scope.itemsPerPage; i++) {
-      //      $scope.displayList[i] = {};
-      //    }
-      //}
-      //$log.log('Page changed to: ' + $scope.currentPage);
-    };
 
     $scope.addMovie = function() {
         if($scope.newMovie === ''  || $scope.newRating === '') {
@@ -64,8 +43,7 @@ angular.module('yeoMeanApp')
     function getMovies() {
       $http.get('/api/movies').success(function(movieList) {
         $scope.movieList = movieList;
-        $scope.totalItems = $scope.movieList.length;
-        $scope.pageChanged();
+        $scope.pagination.numPages = Math.ceil($scope.movieList.length/$scope.pagination.perPage);
       });
     }
   });

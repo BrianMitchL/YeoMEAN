@@ -1,24 +1,22 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<md-toolbar layout="row">
+  <md-button ng-click="toggleLeft()" hide-gt-sm class="menuBtn" aria-label="toggle sidebar">
+    <i class="fa fa-bars"></i>
+  </md-button>
+    <h1>{{title}}</h1>
+</md-toolbar>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>Brian Mitchell</h1>
-    <p class="lead">A blog and collection of fun pages<br />
-      <small>Built with the MEAN stack</small></p>
-  </div>
-</header>
+<div layout="row" flex>
+  <md-sidenav ng-include="'components/sidebar/sidebar.html'" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')"></md-sidenav>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
+  <div layout="column" flex class="content-wrapper" id="content">
+    <md-content layout="column" flex class="md-padding" layout-fill layout-align="center center">
       <h1><a href="/posts">Recent Blog Posts</a></h1>
       <ul class="list-unstyled">
         <li ng-repeat="post in posts">
-          {{ post.date }}&#32;&raquo;&#32;<a ng-href="/posts/{{ post.slug }}">{{ post.title }}</a>&#32;<small>{{ post.description }}</small>
+          {{post.date}}&#32;&raquo;&#32;<a ng-href="/posts/{{post.slug}}">{{post.title}}</a>&#32;<small>{{post.description}}</small>
         </li>
       </ul>
-    </div>
+    </md-content>
+    <footer flex ng-include="'components/footer/footer.html'"></footer>
   </div>
 </div>
-
-<footer ng-include="'components/footer/footer.html'"></footer>

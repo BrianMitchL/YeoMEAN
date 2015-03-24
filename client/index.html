@@ -13,10 +13,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
-      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
       <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-      <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
-      <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
+      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -44,13 +42,13 @@
     <meta name="twitter:description" content="{{metaDescription}}" />
     <meta name="twitter:image" content="{{metaImage}}" />
   </head>
-  <body>
+  <body layout='column' layout-fill>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-view=""></div>
+    <section ng-view=""></section>
 
 
     <!--[if lt IE 9]>
@@ -65,7 +63,6 @@
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/angular-route/angular-route.js"></script>
-      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/inflection/lib/inflection.js"></script>
       <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -73,11 +70,11 @@
       <script src="bower_components/showdown-github-bower/src/extensions/github.js"></script>
       <script src="bower_components/angular-tunnels/tunnels.js"></script>
       <script src="bower_components/angular-comments/scripts/comments.js"></script>
-      <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
-      <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+      <script src="bower_components/angular-aria/angular-aria.js"></script>
+      <script src="bower_components/angular-material/angular-material.js"></script>
+      <script src="bower_components/ng-simplePagination/simplePagination.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
-
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
@@ -100,7 +97,7 @@
           <script src="app/words/words.js"></script>
           <script src="components/footer/footer.controller.js"></script>
           <script src="components/modal/modal.service.js"></script>
-          <script src="components/navbar/navbar.controller.js"></script>
+          <script src="components/sidebar/sidebar.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
     <script>

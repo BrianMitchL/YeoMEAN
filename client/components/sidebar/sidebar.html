@@ -1,0 +1,7 @@
+<md-list ng-controller="SidebarCtrl">
+  <md-item ng-repeat="item in menu">
+    <md-item-content>
+      <md-button ng-href="{{item.link}}">{{item.title}}</md-button>
+    </md-item-content>
+  </md-item>
+</md-list>

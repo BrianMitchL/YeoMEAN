@@ -1,60 +1,62 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<md-toolbar layout="row">
+  <md-button ng-click="toggleLeft()" hide-gt-md class="menuBtn" aria-label="toggle sidebar">
+    <i class="fa fa-bars"></i>
+  </md-button>
+  <h1>{{title}}</h1>
+</md-toolbar>
 
-<header class="hero-unit" id="banner">
-    <div class="container">
-        <h1>Movies</h1>
-        <p class="lead">A movie rating site based on the MEAN stack.</p>
-    </div>
-</header>
-
-<div class="container extra-padding-bottom">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Movies:</h1>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Rating</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="movie in displayList">
-                        <td>
-                          {{movie.name}}
-                        </td>
-                        <td ng-if="movie.isEditing">
-                            <input class="form-control" type="number" max="10" min="1" ng-model="movie.rating" placeholder="Movie Rating (1-10)">
-                        </td>
-                        <td ng-if="movie.isEditing">
-                            <button class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
-                        </td>
-                        <td ng-if="!movie.isEditing">
-                            {{movie.rating}}
-                        </td>
-                        <td ng-if="!movie.isEditing">
-                            <button class="btn btn-xs btn-primary" ng-click="editMovie(movie)">Edit</button> <button class="btn btn-xs btn-danger" ng-click="deleteMovie(movie)">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-          <div class="text-center">
-            <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+<div layout-gt-md="row" layout="column" layout-margin>
+  <div flex="70">
+    <md-list>
+      <md-item>
+        <md-item-content class="dashed-bottom">
+          <div flex="60" layout-align="left center">
+            <h2>Movie</h2>
           </div>
-          <hr class="hrOrange">
-        </div>
-        <div class="col-md-10 col-md-offset-1 well">
-            <h3>Add a New Movie:</h3>
-            <div class="form-group">
-                <label class="sr-only" for="newMovieName">New Movie Name</label>
-                <input class="form-control floating-label" id="newMovieName" type="text" ng-model="newMovie" size="30"placeholder="New Movie Name">
-                <label class="sr-only" for="newMovieRating">New Movie Rating</label>
-                <input class="form-control floating-label" id="newMovieRating" type="number" max="10" min="1" ng-model="newRating" placeholder="New Movie Rating (1-10)">
-                <button class="btn btn-primary" ng-click="addMovie()">Add</button>
-            </div>
-        </div>
-    </div>
+          <div flex="20" layout-align="left center">
+            <h2>Rating</h2>
+          </div>
+          <div flex="20" layout-align="left center">
+            <h2>Action</h2>
+          </div>
+        </md-item-content>
+      </md-item>
+      <md-item ng-repeat="movie in movieList | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+        <md-item-content>
+          <div flex="60">
+            <h3>{{movie.name}}</h3>
+          </div>
+          <div flex="20">
+            <h4 ng-if="!movie.isEditing">{{movie.rating}}</h4>
+            <h4 ng-if="movie.isEditing"><input type="number" max="10" min="1" ng-model="movie.rating" placeholder="Movie Rating (1-10)"></h4>
+          </div>
+          <div flex="20">
+            <h4 ng-if="movie.isEditing"><md-button class="md-raised" ng-click="updateMovie(movie)">Save</md-button></h4>
+            <h4 ng-if="!movie.isEditing"><md-button class="md-raised" ng-click="editMovie(movie)">Edit</md-button> <md-button class="md-raised" ng-click="deleteMovie(movie)">Delete</md-button></h4>
+          </div>
+        </md-item-content>
+      </md-item>
+    </md-list>
+    <ul layout="row" layout-align="center center" class="list-inline list-unstyled">
+      <li><md-button class="md-raised" ng-hide="pagination.page == 0" ng-click="pagination.prevPage()">&laquo; Previous</md-button></li>
+      <li ng-repeat="n in [] | range: pagination.numPages" ng-class="{active: n == pagination.page}">
+        <md-button class="md-raised" ng-click="pagination.toPageId(n)">{{n + 1}}</md-button>
+      </li>
+      <li><md-button class="md-raised" ng-hide="pagination.page + 1 >= pagination.numPages" ng-click="pagination.nextPage()">Next &raquo;</md-button></li>
+    </ul>
+  </div>
+  <div flex>
+    <h3>Add a New Movie:</h3>
+    <md-input-container>
+      <label>Movie Title</label>
+      <input type="text" ng-model="newMovie">
+    </md-input-container>
+    <md-input-container>
+      <label>Movie Rating (1-10)</label>
+      <input type="number" max="10" min="1" ng-model="newRating">
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="addMovie()">Add</md-button>
+  </div>
 </div>
 
 <footer ng-include="'components/footer/footer.html'"></footer>
