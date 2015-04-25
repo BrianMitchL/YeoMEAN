@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div ng-hide="error">
-          <article markdown link="{{ post.file }}"></article>
+          <article markdown link="posts/files/{{ post.file }}"></article>
           <ul class="list-inline">
             <li class="h5">Tags:</li>
             <li ng-repeat="tag in post.tags">{{ tag.title }}</li>
