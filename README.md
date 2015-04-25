@@ -5,10 +5,11 @@ A Yeoman based, generator-angular-fullstack project.
 This site is hosted by Heroku and can be accessed at [https://brianm.me/](https://brianm.me/)
 
 The goal of this project is to learn and experiment with the MEAN stack. The word "YeoMEAN" is a pun combining the "Yeoman" generator and "MEAN" stack.
+The project was initially started to be an example for students in the University of Minnesota, Morris's Software Design and Development course, but has since evolved to be my personal website.
 
 ## Dependencies to run:
 
-You will need node/npm as well as mongodb installed. To install other dependencies, see below:
+You will need Node and MongoDB installed. To install other dependencies, see below:
 
 ```sh
 $ npm install -g bower
