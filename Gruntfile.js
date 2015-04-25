@@ -359,6 +359,7 @@ module.exports = function (grunt) {
             'assets/fonts/**/*',
             'assets/posts/**/*',
             'assets/posts/files/**/*',
+            'assets/*',
             'index.html'
           ]
         }, {
@@ -506,7 +507,7 @@ module.exports = function (grunt) {
           ]
         }
       }
-    },
+    }
   });
 
   // Used for delaying livereload until after server has restarted
