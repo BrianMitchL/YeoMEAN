@@ -12,7 +12,7 @@ Built in September, 2013
 + Fractal Design Arc Mini Case
 + Corsair TX650 Power Supply
 + TP-LINK TL-WDN4800 wireless card
-+ Samsung 840 Pro 256 B SSD
++ Samsung 840 Pro 256GB SSD
 + Crucial MX100 256GB SSD
 + Western Digital Green 1TB 3.5" 7200RPM SATAII HDD
 + Cooler Master Hyper 212 Plus CPU cooler
