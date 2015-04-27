@@ -13,10 +13,10 @@
       <h1 class="page-header">Movies:</h1>
       <table ng-table="movieParams" class="table">
         <tr ng-repeat="movie in $data">
-          <td data-title="'Name'"sortable="'name'">
+          <td data-title="'Name'" sortable="'name'">
             {{movie.name}}
           </td>
-          <td data-title="'Rating'" width="300" sortable="'rating'">
+          <td data-title="'Rating'" width="200" sortable="'rating'">
             <span ng-if="!movie.$edit">{{movie.rating}}</span>
             <input ng-if="movie.$edit" class="form-control" type="number" max="10" min="1" ng-model="movie.rating">
             <button ng-if="!movie.$edit" class="btn btn-primary btn-xs pull-right" ng-click="movie.$edit = true">Edit</button>
