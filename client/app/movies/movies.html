@@ -32,13 +32,26 @@
     </div>
     <div class="col-md-10 col-md-offset-1 well">
       <h3>Add a New Movie:</h3>
-      <div class="form-group">
-          <label class="sr-only" for="newMovieName">New Movie Name</label>
-          <input class="form-control floating-label" id="newMovieName" type="text" ng-model="newMovie" size="30"placeholder="New Movie Name">
-          <label class="sr-only" for="newMovieRating">New Movie Rating</label>
-          <input class="form-control floating-label" id="newMovieRating" type="number" max="10" min="1" ng-model="newRating" placeholder="New Movie Rating (1-10)">
-          <button class="btn btn-primary" ng-click="addMovie()">Add</button>
-      </div>
+      <form name="newMovieForm" class="form-group" ng-submit="addMovie(newMovieForm.$valid)" novalidate>
+        <div class="form-group" ng-class="{ 'has-error' : newMovieForm.name.$invalid && !newMovieForm.name.$pristine }">
+          <label for="name">Name</label>
+          <input class="form-control" id="name" type="text" name="name" ng-model="movie.name" placeholder="Name" ng-minlength="1" required>
+          <div class="error" ng-show="newMovieForm.name.$dirty && newMovieForm.name.$invalid">
+            <small class="error" ng-show="newMovieForm.name.$error.required">A name is required.</small>
+            <small class="error" ng-show="newMovieForm.name.$error.minlength">The name is required to be at least 1 character</small>
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : newMovieForm.rating.$invalid && !newMovieForm.rating.$pristine }">
+          <label for="rating">Rating</label>
+          <input class="form-control" id="rating" type="text" name="rating" ng-model="movie.rating" pattern="^([1-9]|10)$" placeholder="Rating (1-10)" required>
+          <div class="error" ng-show="newMovieForm.rating.$dirty && newMovieForm.rating.$invalid">
+            <small class="error" ng-show="newMovieForm.rating.$error.required">A rating is required.</small>
+            <small class="error" ng-show="newMovieForm.rating.$error.pattern">The rating is required to be a number between 1 and 10</small>
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
     </div>
   </div>
 </div>

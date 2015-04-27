@@ -7,6 +7,8 @@ angular.module('yeoMeanApp')
     $rootScope.metaType = "website";
     $rootScope.metaImage = "/assets/images/BM-Logo-Large.png";
     var data = [];
+    $scope.movie = {};
+    $scope.submitted = false;
 
     $http.get('/api/movies').success(function(movieList) {
       data = movieList;
@@ -30,15 +32,16 @@ angular.module('yeoMeanApp')
       console.log(status + ': ' + data);
     });
 
-    $scope.addMovie = function() {
-      if($scope.newMovie === ''  || $scope.newRating === '') {
-        return;
+    $scope.addMovie = function(isValid) {
+      if (isValid) {
+        $http.post('/api/movies', $scope.movie).success(function () {
+          $scope.reset();
+          $scope.submitted = true;
+          getMovies();
+        }).error(function(data, status) {
+          console.log(status + ': ' + data);
+        });
       }
-      $http.post('/api/movies', { name: $scope.newMovie, rating: $scope.newRating }).success(function(){
-        getMovies();
-        $scope.newMovie = '';
-        $scope.newRating = '';
-      });
     };
 
     $scope.deleteMovie = function(movie) {
@@ -68,5 +71,10 @@ angular.module('yeoMeanApp')
 
     $scope.reloadMovies = function() {
       getMovies();
-    }
+    };
+
+    $scope.reset = function() {
+      $scope.movie = {};
+      $scope.newMovieForm.$setPristine();
+    };
   });
