@@ -25,6 +25,7 @@ module.exports = function(config) {
       'client/bower_components/showdown-github-bower/src/showdown.js',
       'client/bower_components/angular-tunnels/tunnels.js',
       'client/bower_components/angular-comments/scripts/comments.js',
+      'client/bower_components/ng-table/dist/ng-table.js',
       'client/app/app.js',
       'client/app/app.coffee',
       'client/app/**/*.js',

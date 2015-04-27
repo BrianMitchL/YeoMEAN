@@ -5,13 +5,13 @@ describe('Controller: MoviesCtrl', function () {
   // load the controller's module
   beforeEach(module('yeoMeanApp'));
 
-  var UmmCtrl, scope, httpBackend, movieList;
+  var Moviestrl, scope, httpBackend, movieList;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, $httpBackend) {
     scope = $rootScope.$new();
     httpBackend = $httpBackend;
-    UmmCtrl = $controller('MoviesCtrl', {
+    Moviestrl = $controller('MoviesCtrl', {
       $scope: scope
     });
     movieList = [];
@@ -26,6 +26,9 @@ describe('Controller: MoviesCtrl', function () {
         movieList.splice(movieList.indexOf({name:'Batman', rating:9}),1);
         return [200, {}, {}];
     });
+    scope.reset = function() {
+      return;
+    };
   }));
 
   it('should ...', function () {
@@ -34,18 +37,18 @@ describe('Controller: MoviesCtrl', function () {
 
   describe('testing add and delete from the database', function() {
       it('should add a new movie "Batman" with a rating of 9 and return it', function() {
-          scope.newMovie = 'Batman';
-          scope.newRating = 9;
-          scope.addMovie();
+          scope.movie.name = 'Batman';
+          scope.movie.rating = 9;
+          scope.addMovie(true);
           //all of the http requests are added into a queue and are all run when the flush() method is called
           httpBackend.flush();
           expect(movieList[0]).toEqual({name:'Batman', rating:9});
       });
 
       it('should return empty object', function() {
-          scope.newMovie = 'Batman';
-          scope.newRating = 9;
-          scope.addMovie();
+          scope.movie.name = 'Batman';
+          scope.movie.rating = 9;
+          scope.addMovie(true);
           //The _id is used so the correct movie is deleted from the "database"
           scope.deleteMovie({name:'Batman', rating:9, _id:1});
           httpBackend.flush();
