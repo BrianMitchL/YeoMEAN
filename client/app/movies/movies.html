@@ -1,60 +1,46 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <header class="hero-unit" id="banner">
-    <div class="container">
-        <h1>Movies</h1>
-        <p class="lead">A movie rating site based on the MEAN stack.</p>
-    </div>
+  <div class="container">
+    <h1>Movies</h1>
+    <p class="lead">A movie rating site based on the MEAN stack.</p>
+  </div>
 </header>
 
 <div class="container extra-padding-bottom">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Movies:</h1>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Rating</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="movie in displayList">
-                        <td>
-                          {{movie.name}}
-                        </td>
-                        <td ng-if="movie.isEditing">
-                            <input class="form-control" type="number" max="10" min="1" ng-model="movie.rating" placeholder="Movie Rating (1-10)">
-                        </td>
-                        <td ng-if="movie.isEditing">
-                            <button class="btn btn-xs btn-success" ng-click="updateMovie(movie)">Save</button>
-                        </td>
-                        <td ng-if="!movie.isEditing">
-                            {{movie.rating}}
-                        </td>
-                        <td ng-if="!movie.isEditing">
-                            <button class="btn btn-xs btn-primary" ng-click="editMovie(movie)">Edit</button> <button class="btn btn-xs btn-danger" ng-click="deleteMovie(movie)">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-          <div class="text-center">
-            <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>
-          </div>
-          <hr class="hrOrange">
-        </div>
-        <div class="col-md-10 col-md-offset-1 well">
-            <h3>Add a New Movie:</h3>
-            <div class="form-group">
-                <label class="sr-only" for="newMovieName">New Movie Name</label>
-                <input class="form-control floating-label" id="newMovieName" type="text" ng-model="newMovie" size="30"placeholder="New Movie Name">
-                <label class="sr-only" for="newMovieRating">New Movie Rating</label>
-                <input class="form-control floating-label" id="newMovieRating" type="number" max="10" min="1" ng-model="newRating" placeholder="New Movie Rating (1-10)">
-                <button class="btn btn-primary" ng-click="addMovie()">Add</button>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Movies:</h1>
+      <table ng-table="movieParams" class="table">
+        <tr ng-repeat="movie in $data">
+          <td data-title="'Name'"sortable="'name'">
+            {{movie.name}}
+          </td>
+          <td data-title="'Rating'" width="300" sortable="'rating'">
+            <span ng-if="!movie.$edit">{{movie.rating}}</span>
+            <input ng-if="movie.$edit" class="form-control" type="number" max="10" min="1" ng-model="movie.rating">
+            <button ng-if="!movie.$edit" class="btn btn-primary btn-xs pull-right" ng-click="movie.$edit = true">Edit</button>
+            <button ng-if="movie.$edit" class="btn btn-primary btn-xs pull-right" ng-click="movie.$edit = false;updateMovie(movie)">Save</button>
+            <button ng-if="movie.$edit" class="btn btn-primary btn-xs pull-right" ng-click="movie.$edit = false">Cancel</button>
+          </td>
+          <td data-title="'Actions'" width="60">
+            <button class="btn btn-danger btn-xs" ng-click="deleteMovie(movie);">Delete</button>
+          </td>
+        </tr>
+      </table>
+      <hr class="hrOrange">
     </div>
+    <div class="col-md-10 col-md-offset-1 well">
+      <h3>Add a New Movie:</h3>
+      <div class="form-group">
+          <label class="sr-only" for="newMovieName">New Movie Name</label>
+          <input class="form-control floating-label" id="newMovieName" type="text" ng-model="newMovie" size="30"placeholder="New Movie Name">
+          <label class="sr-only" for="newMovieRating">New Movie Rating</label>
+          <input class="form-control floating-label" id="newMovieRating" type="number" max="10" min="1" ng-model="newRating" placeholder="New Movie Rating (1-10)">
+          <button class="btn btn-primary" ng-click="addMovie()">Add</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <footer ng-include="'components/footer/footer.html'"></footer>

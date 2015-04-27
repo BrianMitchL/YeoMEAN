@@ -7,7 +7,8 @@ angular.module('yeoMeanApp', [
   'ngRoute',
   'ui.bootstrap',
   'ngAnimate',
-  'mvd.comments'
+  'mvd.comments',
+  'ngTable'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
