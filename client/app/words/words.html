@@ -8,110 +8,110 @@
 </header>
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h2>{{ sentence }}</h2>
-            <button class="btn  btn-lg btn-primary" type="button" ng-click="makeInsult()">Generate Insult</button>
-          <button class="btn  btn-lg btn-primary" type="button" ng-click="makeGadget()">Generate Gadget</button>
-            <h5>Note: I (Brian Mitchell) do not heavily moderate the list of words. If you find a word to be offensive, please delete it below.</h5>
-            <h3>Add new Words:</h3>
-            <form class="form-inline" role="form" ng-submit="addVerb()">
-                <div class="form-group">
-                    <label class="sr-only" for="verb">Verb</label>
-                    <input class="form-control" id="verb" type="text" ng-model="newVerb" placeholder="Verb" autocapitalize="off">
-                    <input class="form-control btn btn-primary" type="submit" value="Add Verb">
-                    <p class="form-control fadein fadeout text-success" ng-show="verbSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
-                    <p class="form-control fadein fadeout text-danger" ng-show="verbFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
-                </div>
-            </form>
-            <form class="form-inline" role="form" ng-submit="addAdjective()">
-                <div class="form-group">
-                    <label class="sr-only" for="adjective">Adjective</label>
-                    <input class="form-control" id="adjective" type="text" ng-model="newAdjective" placeholder="Adjective" autocapitalize="off">
-                    <input class="form-control btn btn-primary" type="submit" value="Add Adjective">
-                  <p class="form-control fadein fadeout text-success" ng-show="adjectiveSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
-                  <p class="form-control fadein fadeout wordAlert" ng-show="adjectiveFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
-                </div>
-            </form>
-            <form class="form-inline" role="form" ng-submit="addNoun()">
-                <div class="form-group">
-                    <label class="sr-only" for="noun">Noun</label>
-                    <input class="form-control" id="noun" type="text" ng-model="newNoun" placeholder="Noun" autocapitalize="off">
-                    <input class="form-control btn btn-primary" type="submit" value="Add Noun">
-                  <p class="form-control fadein fadeout text-success" ng-show="nounSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
-                  <p class="form-control fadein fadeout text-danger" ng-show="nounFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
-                </div>
-            </form>
-            <h3>Show Existing Words</h3>
-            <button class="btn btn-info" ng-click="isCollapsed = !isCollapsed">{{ toggleText }}</button>
-            <div collapse="isCollapsed">
-              <hr class="hrOrange">
-                <div class="col-sm-4">
-                    <h4>Verbs</h4>
-                    <table class="table well">
-                        <thead>
-                        <tr>
-                            <th class="col-xs-8">Word</th>
-                            <th class="col-xs-4">Delete</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="verb in verbs">
-                            <td>
-                                {{verb.name}}
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-danger" ng-click="deleteVerb(verb)">Delete</button>
-                        </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-sm-4">
-                    <h4>Adjectives</h4>
-                    <table class="table well">
-                        <thead>
-                        <tr>
-                            <th class="col-xs-8">Word</th>
-                            <th class="col-xs-4">Delete</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="adjective in adjectives">
-                            <td>
-                                {{adjective.name}}
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-danger" ng-click="deleteAdjective(adjective)">Delete</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-sm-4">
-                    <h4>Nouns</h4>
-                    <table class="table well">
-                        <thead>
-                        <tr>
-                            <th class="col-xs-8">Word</th>
-                            <th class="col-xs-4">Delete</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="noun in nouns">
-                            <td>
-                                {{noun.name}}
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-danger" ng-click="deleteNoun(noun)">Delete</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>{{sentence}}</h2>
+      <button class="btn  btn-lg btn-primary" type="button" ng-click="makeInsult()">Generate Insult</button>
+      <button class="btn  btn-lg btn-primary" type="button" ng-click="makeGadget()">Generate Gadget</button>
+      <h5>Note: I (Brian Mitchell) do not heavily moderate the list of words. If you find a word to be offensive, please delete it below.</h5>
+      <h3>Add new Words:</h3>
+      <form class="form-inline" role="form" ng-submit="addVerb()">
+        <div class="form-group">
+          <label class="sr-only" for="verb">Verb</label>
+          <input class="form-control" id="verb" type="text" ng-model="newVerb" placeholder="Verb" autocapitalize="off">
+          <input class="form-control btn btn-primary" type="submit" value="Add Verb">
+          <p class="form-control fadein fadeout text-success" ng-show="verbSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
+          <p class="form-control fadein fadeout text-danger" ng-show="verbFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
+        </div>
+      </form>
+      <form class="form-inline" role="form" ng-submit="addAdjective()">
+        <div class="form-group">
+          <label class="sr-only" for="adjective">Adjective</label>
+          <input class="form-control" id="adjective" type="text" ng-model="newAdjective" placeholder="Adjective" autocapitalize="off">
+          <input class="form-control btn btn-primary" type="submit" value="Add Adjective">
+          <p class="form-control fadein fadeout text-success" ng-show="adjectiveSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
+          <p class="form-control fadein fadeout wordAlert" ng-show="adjectiveFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
+        </div>
+      </form>
+      <form class="form-inline" role="form" ng-submit="addNoun()">
+        <div class="form-group">
+          <label class="sr-only" for="noun">Noun</label>
+          <input class="form-control" id="noun" type="text" ng-model="newNoun" placeholder="Noun" autocapitalize="off">
+          <input class="form-control btn btn-primary" type="submit" value="Add Noun">
+          <p class="form-control fadein fadeout text-success" ng-show="nounSuccess"><span class="glyphicon glyphicon-ok-circle"></span>&#32;Added</p>
+          <p class="form-control fadein fadeout text-danger" ng-show="nounFailure"><span class="glyphicon glyphicon-remove-circle"></span>&#32;Failed, Please Try Again</p>
+        </div>
+      </form>
+      <h3>Show Existing Words</h3>
+      <button class="btn btn-info" ng-click="isCollapsed = !isCollapsed">{{ toggleText }}</button>
+      <div collapse="isCollapsed">
+        <hr class="hrOrange">
+          <div class="col-sm-4">
+            <h4>Verbs</h4>
+            <table class="table well">
+              <thead>
+              <tr>
+                <th class="col-xs-8">Word</th>
+                <th class="col-xs-4">Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="verb in verbs">
+                <td>
+                  {{verb.name}}
+                </td>
+                <td>
+                  <button class="btn btn-xs btn-danger" ng-click="deleteVerb(verb)">Delete</button>
+              </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-4">
+            <h4>Adjectives</h4>
+            <table class="table well">
+              <thead>
+              <tr>
+                <th class="col-xs-8">Word</th>
+                <th class="col-xs-4">Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="adjective in adjectives">
+                <td>
+                  {{adjective.name}}
+                </td>
+                <td>
+                  <button class="btn btn-xs btn-danger" ng-click="deleteAdjective(adjective)">Delete</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-4">
+            <h4>Nouns</h4>
+            <table class="table well">
+              <thead>
+              <tr>
+                <th class="col-xs-8">Word</th>
+                <th class="col-xs-4">Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="noun in nouns">
+                <td>
+                  {{noun.name}}
+                </td>
+                <td>
+                  <button class="btn btn-xs btn-danger" ng-click="deleteNoun(noun)">Delete</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
     </div>
+  </div>
 </div>
 
 <footer ng-include="'components/footer/footer.html'"></footer>
