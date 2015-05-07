@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: WeatherBotCtrl', function () {
+describe('Controller: ProjectsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('yeoMeanApp'));
 
-  var WeatherBotCtrl, scope;
+  var ProjectsCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    WeatherBotCtrl = $controller('WeatherBotCtrl', {
+    ProjectsCtrl = $controller('ProjectsCtrl', {
       $scope: scope
     });
   }));

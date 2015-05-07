@@ -1,0 +1,15 @@
+.project-box {
+  background-color: #DCDBDC;
+  padding: 10px;
+  margin: 1em 0;
+  border-radius: 5px;
+}
+
+.project-box > h1, .project-box > h3 {
+  margin-top: 0;
+}
+
+.project-box > h1 {
+  padding-bottom: 4px;
+  border-bottom: 1px solid #565656;
+}

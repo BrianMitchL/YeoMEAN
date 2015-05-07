@@ -12,14 +12,12 @@ angular.module('yeoMeanApp')
       'link': '/contact',},
     {'title': 'Blog Posts',
       'link': '/posts',},
+    {'title': 'Projects',
+      'link': '/projects'},
     {'title': 'Movies',
       'link': '/movies',},
     {'title': 'Words',
-      'link': '/words',},
-    {'title': 'Weather Bot',
-      'link': '/weatherBot',},
-  {'title': 'Hey, Get Back To Work',
-      'link': 'http://heygetbackto.work'}];
+      'link': '/words',}];
 
     $scope.isCollapsed = true;
 
