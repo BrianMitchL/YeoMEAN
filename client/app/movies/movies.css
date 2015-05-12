@@ -22,3 +22,10 @@ td > span {
 .ng-table-counts > button {
   background-color: white !important;
 }
+
+.ng-table-counts > button:active {
+  background-color: #E9E9E9 !important;
+}
+.ng-table-counts > button:hover {
+  background-color: #E9E9E9 !important;
+}
