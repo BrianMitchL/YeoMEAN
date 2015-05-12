@@ -18,3 +18,7 @@ td > span {
 .error {
   color: #F23A30;
 }
+
+.ng-table-counts > button {
+  background-color: white !important;
+}
